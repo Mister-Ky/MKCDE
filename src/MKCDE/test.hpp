@@ -7,4 +7,4 @@
 
 void testa(){std::cout<<"test text mkcde" << std::endl;}
 
-#endif //DIR_HPP
+#endif
