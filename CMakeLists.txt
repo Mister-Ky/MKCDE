@@ -6,8 +6,6 @@ endif()
 
 project(MKCDE LANGUAGES CXX)
 
-set_target_properties(MKCDE PROPERTIES LINKER_LANGUAGE CXX)
-
 file(GLOB_RECURSE SOURCES 
     "src/*.cpp"
     "src/*.hpp"
@@ -21,5 +19,8 @@ file(GLOB_RECURSE SOURCES
     "src/*.H"
 )
 add_library(MKCDE ${SOURCES})
+
+
+set_target_properties(MKCDE PROPERTIES LINKER_LANGUAGE CXX)
 
 #target_link_libraries(MKCDE PRIVATE some_library)
