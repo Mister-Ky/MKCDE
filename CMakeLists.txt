@@ -54,7 +54,11 @@ file(GLOB_RECURSE SOURCES
     "src/*.C"
     "src/*.H"
 )
-add_library(MKCDE ${BUILD_KIND} ${SOURCES})
+if(BUILD_CONFIGURATION_DYNAMIC)
+    add_library(MKCDE SHARED ${SOURCES})
+elseif(BUILD_CONFIGURATION_STATIC)
+    add_library(MKCDE STATIC ${SOURCES})
+endif()
 target_include_directories(MKCDE PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
