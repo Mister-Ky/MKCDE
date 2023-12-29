@@ -5,7 +5,7 @@ if(POLICY CMP0141)
 endif()
 
 project(MKCDE LANGUAGES CXX)
-include(${CMAKE_CURRENT_SOURCE_DIR}/include)
+include(${CMAKE_CURRENT_SOURCE_DIR}/include/*)
 
 file(GLOB_RECURSE SOURCES 
     "src/*.cpp"
