@@ -20,7 +20,6 @@ file(GLOB_RECURSE SOURCES
 )
 add_library(MKCDE ${SOURCES})
 
-
 set_target_properties(MKCDE PROPERTIES LINKER_LANGUAGE CXX)
 
 #target_link_libraries(MKCDE PRIVATE some_library)
