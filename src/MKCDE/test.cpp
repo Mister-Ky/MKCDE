@@ -1,4 +1,4 @@
-$include <MKCDE/test.hpp>
+#include <MKCDE/test.hpp>
 
 #pragma once
 
