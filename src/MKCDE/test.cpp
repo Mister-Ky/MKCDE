@@ -1,3 +1,5 @@
+$include <MKCDE/test.hpp>
+
 #pragma once
 
 #ifndef TEST_HPP
