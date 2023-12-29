@@ -15,15 +15,15 @@ set(BUILD_CONFIGURATION_DYNAMIC FALSE CACHE BOOL "Build type: Dynamic")
 
 if(NOT ((BUILD_CONFIGURATION_RELEASE AND NOT BUILD_CONFIGURATION_DEBUG) OR
         (NOT BUILD_CONFIGURATION_RELEASE AND BUILD_CONFIGURATION_DEBUG)))
-    message(FATAL_ERROR "Please choose either 'Release' or 'Debug' build configuration.")
+    message(FATAL_ERROR "MKCDE : Please choose either 'Release' or 'Debug' build configuration.")
 endif()
 if(NOT ((BUILD_CONFIGURATION_X86 AND NOT BUILD_CONFIGURATION_X64) OR
         (NOT BUILD_CONFIGURATION_X86 AND BUILD_CONFIGURATION_X64)))
-    message(FATAL_ERROR "Please choose either 'x86' or 'x64' architecture.")
+    message(FATAL_ERROR "MKCDE : Please choose either 'x86' or 'x64' architecture.")
 endif()
 if(NOT ((BUILD_CONFIGURATION_STATIC AND NOT BUILD_CONFIGURATION_DYNAMIC) OR
         (NOT BUILD_CONFIGURATION_STATIC AND BUILD_CONFIGURATION_DYNAMIC)))
-    message(FATAL_ERROR "Please choose either 'Static' or 'Dynamic' build type.")
+    message(FATAL_ERROR "MKCDE : Please choose either 'Static' or 'Dynamic' build type.")
 endif()
 
 if(BUILD_CONFIGURATION_RELEASE)
@@ -59,4 +59,4 @@ target_compile_features(MKCDE PRIVATE cxx_std_17)
 target_include_directories(MKCDE PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
-message(STATUS "Build configuration MKCDE: ${BUILD_TYPE}-${ARCHITECTURE}-${BUILD_KIND}")
+message(STATUS "MKCDE : Build configuration: ${BUILD_TYPE}-${ARCHITECTURE}-${BUILD_KIND}")
