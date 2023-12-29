@@ -5,6 +5,7 @@ if(POLICY CMP0141)
 endif()
 
 project(MKCDE LANGUAGES CXX)
+include("src/")
 
 file(GLOB_RECURSE SOURCES 
     "src/*.cpp"
