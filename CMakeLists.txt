@@ -6,8 +6,6 @@ endif()
 
 project(MKCDE LANGUAGES CXX)
 
-option(BUILD_SHARED_LIBS "Build shared libraries" ON)
-
 set(BUILD_CONFIGURATION_RELEASE FALSE CACHE BOOL "Build configuration: Release")
 set(BUILD_CONFIGURATION_DEBUG FALSE CACHE BOOL "Build configuration: Debug")
 set(BUILD_CONFIGURATION_X86 FALSE CACHE BOOL "Architecture: x86")
