@@ -21,4 +21,4 @@ file(GLOB_RECURSE SOURCES
 )
 add_library(MKCDE ${SOURCES})
 set_target_properties(MKCDE PROPERTIES LINKER_LANGUAGE CXX)
-target_compile_features(MK_Engine PRIVATE cxx_std_17)
+target_compile_features(MKCDE PRIVATE cxx_std_17)
