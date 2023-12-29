@@ -43,16 +43,16 @@ elseif(BUILD_CONFIGURATION_DYNAMIC)
 endif()
 
 file(GLOB_RECURSE SOURCES 
-    "src/*.cpp"
-    "src/*.hpp"
-    "src/*.inl"
-    "src/*.cxx"
-    "src/*.hxx"
-    "src/*.ixx"
-    "src/*.cc"
-    "src/*.hh"
-    "src/*.C"
-    "src/*.H"
+    "src/MKCDE/*.cpp"
+    "src/MKCDE/*.hpp"
+    "src/MKCDE/*.inl"
+    "src/MKCDE/*.cxx"
+    "src/MKCDE/*.hxx"
+    "src/MKCDE/*.ixx"
+    "src/MKCDE/*.cc"
+    "src/MKCDE/*.hh"
+    "src/MKCDE/*.C"
+    "src/MKCDE/*.H"
 )
 add_library(MKCDE ${SOURCES})
 target_include_directories(MKCDE PUBLIC
