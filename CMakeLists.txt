@@ -5,7 +5,7 @@ if(POLICY CMP0141)
 endif()
 
 project(MKCDE LANGUAGES CXX)
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+include(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 file(GLOB_RECURSE SOURCES 
     "src/*.cpp"
@@ -21,5 +21,4 @@ file(GLOB_RECURSE SOURCES
 )
 add_library(MKCDE ${SOURCES})
 
-list(APPEND MKCDE_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/include)
 set_target_properties(MKCDE PROPERTIES LINKER_LANGUAGE CXX)
