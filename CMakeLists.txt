@@ -6,7 +6,7 @@ endif()
 
 project(MKCDE LANGUAGES CXX)
 
-set(BUILD_CONFIGURATION "release" CACHE STRING "Build configuration")
+set(BUILD_CONFIGURATION "." CACHE STRING "Build configuration")
 
 if(NOT BUILD_CONFIGURATION MATCHES "release" AND NOT BUILD_CONFIGURATION MATCHES "debug")
     message(FATAL_ERROR "Invalid build configuration. Please choose 'release' or 'debug'.")
