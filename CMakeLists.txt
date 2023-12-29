@@ -6,7 +6,7 @@ endif()
 
 project(MKCDE LANGUAGES CXX)
 
-option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
+option(BUILD_SHARED_LIBS "Build shared libraries" ON)
 
 set(BUILD_CONFIGURATION_RELEASE FALSE CACHE BOOL "Build configuration: Release")
 set(BUILD_CONFIGURATION_DEBUG FALSE CACHE BOOL "Build configuration: Debug")
