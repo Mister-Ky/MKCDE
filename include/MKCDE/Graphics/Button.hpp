@@ -3,7 +3,7 @@
 #ifndef MK_BUTTON_HPP
 #define MK_BUTTON_HPP
 
-#include <SFMK/Graphics.hpp>
+#include <SFML/Graphics.hpp>
 
 class Button
 {
