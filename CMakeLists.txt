@@ -51,6 +51,9 @@ elseif(MKCDE_BUILD_CONFIGURATION_DYNAMIC)
     set(MKCDE_BUILD_KIND "SHARED")
 endif()
 
+find_package(SFML REQUIRED COMPONENTS system window graphics)
+include_directories(${SFML_INCLUDE_DIRS})
+add_subdirectory(${IMGUI_SFML_DIR})
 
 include(FetchContent)
 FetchContent_Declare(SFML
@@ -82,11 +85,10 @@ file(GLOB_RECURSE SOURCES
     "src/MKCDE/*.H"
 )
 add_library(MKCDE ${MKCDE_BUILD_KIND} ${SOURCES})
-
-
 target_compile_features(MKCDE PRIVATE cxx_std_17)
 target_include_directories(MKCDE PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
+target_link_libraries(MKCDE PUBLIC sfml-system sfml-window sfml-graphics ImGui-SFML)
 
 message(STATUS "MKCDE : Build configuration: ${MKCDE_BUILD_TYPE}-${MKCDE_ARCHITECTURE}-${MKCDE_BUILD_KIND}")
