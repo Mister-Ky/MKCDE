@@ -51,9 +51,6 @@ elseif(MKCDE_BUILD_CONFIGURATION_DYNAMIC)
     set(MKCDE_BUILD_KIND "SHARED")
 endif()
 
-find_package(SFML REQUIRED COMPONENTS system window graphics)
-include_directories(${SFML_INCLUDE_DIRS})
-add_subdirectory(${IMGUI_SFML_DIR})
 
 include(FetchContent)
 FetchContent_Declare(SFML
@@ -71,6 +68,9 @@ FetchContent_Declare(ImGui-SFML
     GIT_TAG 2.6.x)
 FetchContent_MakeAvailable(ImGui-SFML)
 
+find_package(SFML REQUIRED COMPONENTS system window graphics)
+include_directories(${SFML_INCLUDE_DIRS})
+add_subdirectory(${IMGUI_SFML_DIR})
 
 file(GLOB_RECURSE SOURCES 
     "src/MKCDE/*.cpp"
