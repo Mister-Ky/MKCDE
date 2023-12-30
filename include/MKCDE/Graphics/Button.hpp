@@ -5,11 +5,14 @@
 
 #include <SFML/Graphics.hpp>
 
+namespace MK
+{
 class Button
 {
 public:
   Button();
   ~Button();
 };
+}
 
 #endif
