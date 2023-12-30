@@ -6,12 +6,14 @@ endif()
 
 project(MKCDE LANGUAGES CXX)
 
+
 set(MKCDE_BUILD_CONFIGURATION_RELEASE FALSE CACHE BOOL "release mkcde")
 set(MKCDE_BUILD_CONFIGURATION_DEBUG FALSE CACHE BOOL "debug mkcde")
 set(MKCDE_BUILD_CONFIGURATION_X86 FALSE CACHE BOOL "x86 mkcde")
 set(MKCDE_BUILD_CONFIGURATION_X64 FALSE CACHE BOOL "x64 mkcde")
 set(MKCDE_BUILD_CONFIGURATION_STATIC FALSE CACHE BOOL "static mkcde")
 set(MKCDE_BUILD_CONFIGURATION_DYNAMIC FALSE CACHE BOOL "dynamic mkcde")
+
 
 if(NOT ((MKCDE_BUILD_CONFIGURATION_RELEASE AND NOT MKCDE_BUILD_CONFIGURATION_DEBUG) OR
         (NOT MKCDE_BUILD_CONFIGURATION_RELEASE AND MKCDE_BUILD_CONFIGURATION_DEBUG)))
@@ -25,6 +27,7 @@ if(NOT ((MKCDE_BUILD_CONFIGURATION_STATIC AND NOT MKCDE_BUILD_CONFIGURATION_DYNA
         (NOT MKCDE_BUILD_CONFIGURATION_STATIC AND MKCDE_BUILD_CONFIGURATION_DYNAMIC)))
     message(FATAL_ERROR "MKCDE : Please choose either 'Static' or 'Dynamic' build type.")
 endif()
+
 
 if(MKCDE_BUILD_CONFIGURATION_RELEASE)
     set(CMAKE_BUILD_TYPE Release)
@@ -48,6 +51,24 @@ elseif(MKCDE_BUILD_CONFIGURATION_DYNAMIC)
     set(MKCDE_BUILD_KIND "SHARED")
 endif()
 
+
+include(FetchContent)
+FetchContent_Declare(SFML
+    GIT_REPOSITORY https://github.com/SFML/SFML.git
+    GIT_TAG 2.6.x)
+FetchContent_MakeAvailable(SFML)
+FetchContent_Declare(ImGui
+    GIT_REPOSITORY https://github.com/ocornut/imgui
+    GIT_TAG v1.89.9)
+FetchContent_MakeAvailable(ImGui)
+FetchContent_GetProperties(ImGui SOURCE_DIR IMGUI_DIR)
+set(IMGUI_SFML_FIND_SFML OFF)
+FetchContent_Declare(ImGui-SFML
+    GIT_REPOSITORY https://github.com/SFML/imgui-sfml
+    GIT_TAG 2.6.x)
+FetchContent_MakeAvailable(ImGui-SFML)
+
+
 file(GLOB_RECURSE SOURCES 
     "src/MKCDE/*.cpp"
     "src/MKCDE/*.hpp"
@@ -61,8 +82,11 @@ file(GLOB_RECURSE SOURCES
     "src/MKCDE/*.H"
 )
 add_library(MKCDE ${MKCDE_BUILD_KIND} ${SOURCES})
+
+
 target_compile_features(MKCDE PRIVATE cxx_std_17)
 target_include_directories(MKCDE PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
+
 message(STATUS "MKCDE : Build configuration: ${MKCDE_BUILD_TYPE}-${MKCDE_ARCHITECTURE}-${MKCDE_BUILD_KIND}")
