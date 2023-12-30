@@ -7,11 +7,17 @@
 
 namespace MK
 {
-class Button
+class Button : public sf::Drawable
 {
 public:
   Button();
+  Button(sf::RectangleShape& shape, sf::Text& text);
   ~Button();
+
+  virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
+private:
+  sf::RectangleShape m_shape;
+  sf::Text m_text;
 };
 }
 
