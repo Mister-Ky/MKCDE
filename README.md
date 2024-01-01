@@ -1,1 +1,1 @@
-# MKCDE (Multifunctional Komplex Comprehensive Development Environment) - open source c++ library
+# MKCDE (Modular Kit for Code Development Efficiency) - open source c++ library
