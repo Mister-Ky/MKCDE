@@ -11,7 +11,7 @@ class Button : public sf::Drawable
 {
 public:
   Button();
-  Button(const sf::RectangleShape& shape, const sf::Text& text) : m_shape(shape), m_text(text) {}
+  Button(const sf::RectangleShape& shape, const sf::Text& text);
   ~Button();
 
   virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
