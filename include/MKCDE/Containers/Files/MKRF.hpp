@@ -28,8 +28,8 @@
 //  0-255          |  256           |  Resource name
 //  256-259        |  4             |  Resource size (in bytes)
 //  260            |  1             |  Empty file flag (0x01 if empty, 0x00 otherwise)
-//  261-270        |  10            |  Reserved for future use
-//  271+           |  Variable      |  Resource data
+//  261-272        |  12            |  Reserved for future use
+//  273+           |  Variable      |  Resource data
 //  Variable-12    |  12            |  End-of-resource marker
 ////////////////////////////////////////////////////////////////////////////////////////
 
