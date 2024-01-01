@@ -4,10 +4,9 @@ namespace MK
 {
 Button::Button() = default;
 
-Button::Button(sf::RectangleShape& shape, sf::Text& text)
+Button::Button(const sf::RectangleShape& shape, const sf::Text& text)
+  : m_shape(shape), m_text(text)
 {
-  this->m_shape = shape;
-  this->m_text = text;
 }
 
 Button::~Button()
