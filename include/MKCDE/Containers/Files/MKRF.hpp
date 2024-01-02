@@ -29,7 +29,7 @@
 //  260            |  1             |  Empty file flag (0x01 if empty, 0x00 otherwise)
 //  261-272        |  12            |  Reserved for future use
 //  273+           |  Min of 1 byte |  Resource data
-//  Variable-12    |  12            |  End-of-resource marker
+//  Last 12        |  12            |  End-of-resource marker
 ////////////////////////////////////////////////////////////////////////////////////////
 
 #include <fstream>
