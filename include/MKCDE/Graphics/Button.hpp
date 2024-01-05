@@ -14,6 +14,9 @@ public:
   Button(const sf::RectangleShape& shape, const sf::Text& text);
   ~Button();
 
+  void setText(const sf::Text& text);
+  void setShape(const sf::RectangleShape& shape);
+
   virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 private:
   sf::RectangleShape m_shape;

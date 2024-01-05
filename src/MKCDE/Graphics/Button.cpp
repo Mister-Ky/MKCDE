@@ -14,6 +14,16 @@ Button::~Button()
   
 }
 
+void Button::setText(const sf::Text& text)
+{
+  m_text = text;
+}
+
+void Button::setShape(const sf::RectangleShape& shape)
+{
+  m_shape = shape;
+}
+
 void Button::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
   target.draw(m_shape, states);
