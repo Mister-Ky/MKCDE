@@ -7,7 +7,7 @@
 
 namespace MK
 {
-class Triangle : public sf::Drawable
+class Triangle : public sf::Drawable, public sf::Transformable
 {
 public:
   Triangle();

@@ -26,6 +26,7 @@ void Button::setShape(const sf::RectangleShape& shape)
 
 void Button::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
+  states.transform *= getTransform();
   target.draw(m_shape, states);
   target.draw(m_text, states);
 }
