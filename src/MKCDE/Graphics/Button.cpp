@@ -9,10 +9,7 @@ Button::Button(const sf::RectangleShape& shape, const sf::Text& text)
 {
 }
 
-Button::~Button()
-{
-  
-}
+Button::~Button() = default;
 
 void Button::setText(const sf::Text& text)
 {

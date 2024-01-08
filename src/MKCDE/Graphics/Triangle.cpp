@@ -12,10 +12,7 @@ Triangle::Triangle(const sf::Vector2f& point1, const sf::Vector2f& point2, const
   m_shape.setPoint(2, point3);
 }
 
-Triangle::~Triangle()
-{
-  
-}
+Triangle::~Triangle() = default;
 
 void Triangle::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
