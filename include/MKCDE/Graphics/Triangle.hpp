@@ -3,7 +3,7 @@
 #ifndef MK_TRIANGLE_HPP
 #define MK_TRIANGLE_HPP
 
-#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/ConvexShape.hpp>
 
 namespace MK
 {
