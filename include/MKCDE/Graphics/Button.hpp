@@ -7,7 +7,7 @@
 
 namespace MK
 {
-class Button : public sf::Drawable, public sf::Transformable
+class Button : public sf::Shape
 {
 public:
   Button();
