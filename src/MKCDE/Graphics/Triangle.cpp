@@ -17,9 +17,4 @@ void Triangle::setPoints(const sf::Vector2f& point1, const sf::Vector2f& point2,
   setPoint(1, point2);
   setPoint(2, point3);
 }
-
-void Triangle::draw(sf::RenderTarget& target, sf::RenderStates states) const
-{
-    sf::ConvexShape::draw(target, states);
-}
 }
