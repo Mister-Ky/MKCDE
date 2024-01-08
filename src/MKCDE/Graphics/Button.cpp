@@ -4,9 +4,23 @@ namespace MK
 {
 Button::Button() = default;
 
-Button::Button(const sf::Shape& shape, const sf::Text& text)
-  : sf::Shape(shape), m_text(text)
+void shapeToConvexShape(const Shape* shape)
 {
+  for (size_t i = 0; i < getPointCount(); i++)
+  {
+    setPoint(i, shape->getPoint(i));
+  }
+}
+
+Button::Button(const sf::Shape& shape)
+  : sf::ConvexShape(shape.getPointCount()), m_text()
+{
+  shapeToConvexShape(&shape);
+}
+Button::Button(const sf::Shape& shape, const sf::Text& text)
+  : sf::ConvexShape(shape.getPointCount()), m_text(text)
+{
+  shapeToConvexShape(&shape);
 }
 
 void Button::setText(const sf::Text& text)
@@ -16,7 +30,6 @@ void Button::setText(const sf::Text& text)
 
 void Button::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
-  target.draw(static_cast<const sf::Shape&>(*this), states);
   target.draw(m_text, states);
 }
 }

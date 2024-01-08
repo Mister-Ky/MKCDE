@@ -3,14 +3,16 @@
 #ifndef MK_BUTTON_HPP
 #define MK_BUTTON_HPP
 
-#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/ConvexShape.hpp>
+#include <SFML/Graphics/Text.hpp>
 
 namespace MK
 {
-class Button : public sf::Shape
+class Button : public sf::ConvexShape
 {
 public:
   Button();
+  Button(const sf::Shape& shape);
   Button(const sf::Shape& shape, const sf::Text& text);
 
   void setText(const sf::Text& text);
