@@ -7,19 +7,17 @@
 
 namespace MK
 {
-class Button : public sf::Shape
+class Button : public sf::ConvexShape
 {
 public:
   Button();
-  Button(const sf::RectangleShape& shape, const sf::Text& text);
+  Button(const sf::ConvexShape& shape, const sf::Text& text);
   ~Button();
 
   void setText(const sf::Text& text);
-  void setShape(const sf::RectangleShape& shape);
 private:
   virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
-  sf::RectangleShape m_shape;
   sf::Text m_text;
 };
 }
