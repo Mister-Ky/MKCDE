@@ -10,10 +10,10 @@ namespace MK
 class Triangle : public sf::ConvexShape
 {
 public:
-  Triangle();
-  Triangle(const sf::Vector2f& point1, const sf::Vector2f& point2, const sf::Vector2f& point3);
+    Triangle();
+    Triangle(const sf::Vector2f& point1, const sf::Vector2f& point2, const sf::Vector2f& point3);
 
-  void setPoints(const sf::Vector2f& point1, const sf::Vector2f& point2, const sf::Vector2f& point3);
+    void setPoints(const sf::Vector2f& point1, const sf::Vector2f& point2, const sf::Vector2f& point3);
 };
 }
 
