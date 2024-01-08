@@ -2,10 +2,10 @@
 
 namespace MK
 {
-Button::Button() : sf::ConvexShape(4) {}
+Button::Button() = default;
 
-Button::Button(const sf::ConvexShape& shape, const sf::Text& text)
-  : m_text(text)
+Button::Button(const sf::Shape& shape, const sf::Text& text)
+  : sf::Shape(shape), m_text(text)
 {
 }
 
@@ -16,6 +16,7 @@ void Button::setText(const sf::Text& text)
 
 void Button::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
+  target.draw(static_cast<const sf::Shape&>(*this), states);
   target.draw(m_text, states);
 }
 }

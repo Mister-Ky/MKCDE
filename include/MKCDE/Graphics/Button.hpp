@@ -7,11 +7,11 @@
 
 namespace MK
 {
-class Button : public sf::ConvexShape
+class Button : public sf::Shape
 {
 public:
   Button();
-  Button(const sf::ConvexShape& shape, const sf::Text& text);
+  Button(const sf::Shape& shape, const sf::Text& text);
 
   void setText(const sf::Text& text);
 private:
