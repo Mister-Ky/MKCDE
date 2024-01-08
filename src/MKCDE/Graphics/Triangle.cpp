@@ -20,6 +20,6 @@ void Triangle::setPoints(const sf::Vector2f& point1, const sf::Vector2f& point2,
 
 void Triangle::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
-    target.draw(static_cast<const sf::ConvexShape&>(*this), states);
+    sf::ConvexShape::draw(target, states);
 }
 }
