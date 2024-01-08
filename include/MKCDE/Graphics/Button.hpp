@@ -19,6 +19,8 @@ public:
 private:
   virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
+  void shapeToConvexShape(const sf::Shape* shape);
+
   sf::Text m_text;
 };
 }

@@ -4,7 +4,7 @@ namespace MK
 {
 Button::Button() = default;
 
-void shapeToConvexShape(const Shape* shape)
+void Button::shapeToConvexShape(const sf::Shape* shape)
 {
   for (size_t i = 0; i < getPointCount(); i++)
   {
