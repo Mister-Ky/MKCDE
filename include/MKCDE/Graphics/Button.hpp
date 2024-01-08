@@ -16,9 +16,9 @@ public:
 
   void setText(const sf::Text& text);
   void setShape(const sf::RectangleShape& shape);
-
-  virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 private:
+  virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
+
   sf::RectangleShape m_shape;
   sf::Text m_text;
 };
