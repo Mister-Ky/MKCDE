@@ -9,8 +9,6 @@ Button::Button(const sf::ConvexShape& shape, const sf::Text& text)
 {
 }
 
-Button::~Button() = default;
-
 void Button::setText(const sf::Text& text)
 {
   m_text = text;

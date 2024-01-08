@@ -12,7 +12,6 @@ class Button : public sf::ConvexShape
 public:
   Button();
   Button(const sf::ConvexShape& shape, const sf::Text& text);
-  ~Button();
 
   void setText(const sf::Text& text);
 private:
