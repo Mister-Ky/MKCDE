@@ -7,12 +7,14 @@
 
 namespace MK
 {
-class Triangle : public sf::Drawable, public sf::Transformable
+class Triangle : public sf::ConvexShape
 {
 public:
   Triangle();
   Triangle(const sf::Vector2f& point1, const sf::Vector2f& point2, const sf::Vector2f& point3);
   ~Triangle();
+
+  void setPoints(const sf::Vector2f& point1, const sf::Vector2f& point2, const sf::Vector2f& point3);
 private:
   virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 

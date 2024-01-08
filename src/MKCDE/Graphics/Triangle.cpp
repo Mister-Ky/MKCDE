@@ -2,20 +2,19 @@
 
 namespace MK
 {
-Triangle::Triangle() = default;
+Triangle::Triangle() : sf::ConvexShape(3) {}
 
-Triangle::Triangle(const sf::Vector2f& point1, const sf::Vector2f& point2, const sf::Vector2f& point3) : m_shape(3)
+Triangle::Triangle(const sf::Vector2f& point1, const sf::Vector2f& point2, const sf::Vector2f& point3) : sf::ConvexShape(3)
 {
-  m_shape.setPoint(0, point1);
-  m_shape.setPoint(1, point2);
-  m_shape.setPoint(2, point3);
+  setPoints(point1, point2, point3);
 }
 
 Triangle::~Triangle() = default;
 
-void Triangle::draw(sf::RenderTarget& target, sf::RenderStates states) const
+void Triangle::setPoints(const sf::Vector2f& point1, const sf::Vector2f& point2, const sf::Vector2f& point3)
 {
-  states.transform *= getTransform();
-  target.draw(m_shape, states);
+  setPoint(0, point1);
+  setPoint(1, point2);
+  setPoint(2, point3);
 }
 }
