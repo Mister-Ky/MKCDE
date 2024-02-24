@@ -32,8 +32,13 @@
 //  Last 12        |  12            |  End-of-resource marker
 ////////////////////////////////////////////////////////////////////////////////////////
 
+#pragma once
+
 #include <fstream>
 #include <vector>
+
+#ifndef MK_MKRF_HPP
+#define MK_MKRF_HPP
 
 struct Resource {
 };
@@ -46,3 +51,5 @@ void readMKRF(const std::string& filename, MKRF& mkrf) {
 
 void writeMKRF(const std::string& filename, const MKRF& mkrf) {
 }
+
+#endif
