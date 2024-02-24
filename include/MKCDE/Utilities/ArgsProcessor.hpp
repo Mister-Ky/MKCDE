@@ -3,6 +3,13 @@
 #ifndef MK_ARGS_PROCESSOR_HPP
 #define MK_ARGS_PROCESSOR_HPP
 
+#include <iostream>
+#include <string>
+#include <map>
+#include <vector>
+#include <functional>
+#include <tuple>
+
 namespace MK
 {
 class ArgsProcessor
