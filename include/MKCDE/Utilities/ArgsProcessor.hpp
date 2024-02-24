@@ -17,7 +17,6 @@ class ArgsProcessor
 private:
     std::map<std::string, std::tuple<std::function<void(const std::vector<std::string>&)>, int, int>> commands;
     char commandSymbol;
-
 public:
     ArgsProcessor();
 
