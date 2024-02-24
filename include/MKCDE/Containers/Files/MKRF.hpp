@@ -42,9 +42,15 @@
 
 namespace MK
 {
-struct Resource;
+struct Resource
+{
 
-struct MKRF;
+};
+
+struct MKRF 
+{
+
+};
 
 void readMKRF(const std::string& filename, MKRF& mkrf);
 
