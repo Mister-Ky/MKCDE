@@ -6,6 +6,6 @@
 #include <Windows.h>
 
 //The font was designed by Bernd Montag
-byte sansationBytes[28912];
+extern byte sansationBytes[28912];
 
 #endif
