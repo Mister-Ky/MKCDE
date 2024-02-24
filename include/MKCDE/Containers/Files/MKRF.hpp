@@ -40,16 +40,15 @@
 #ifndef MK_MKRF_HPP
 #define MK_MKRF_HPP
 
-struct Resource {
-};
+namespace MK
+{
+struct Resource;
 
-struct MKRF {
-};
+struct MKRF;
 
-void readMKRF(const std::string& filename, MKRF& mkrf) {
-}
+void readMKRF(const std::string& filename, MKRF& mkrf);
 
-void writeMKRF(const std::string& filename, const MKRF& mkrf) {
+void writeMKRF(const std::string& filename, const MKRF& mkrf);
 }
 
 #endif
