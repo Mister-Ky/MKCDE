@@ -3,8 +3,8 @@
 #ifndef MK_NODE_HPP
 #define MK_NODE_HPP
 
+#include <map>
 #include <memory>
-#include <unordered_map>
 
 namespace MK
 {
@@ -14,7 +14,7 @@ typedef unsigned short NodeLevel;
 class Node {
 public:
     NodeID id;
-    std::unordered_map<NodeLevel, std::shared_ptr<Node>> children;
+    std::map<NodeLevel, std::shared_ptr<Node>> children;
 
     Node(NodeID id);
 
