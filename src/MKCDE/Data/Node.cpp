@@ -20,7 +20,17 @@ void MK::Node::add_child(NodeLevel level, std::shared_ptr<Node> child)
     {
         return;
     }
-    //beta
+    auto it = children.find(level);
+    if (it != children.end())
+    {
+        NodeLevel tempLevel = children.size();
+        while (tempLevel != level - 1)
+        {
+            children[tempLevel + 1] = children[tempLevel];
+            tempLevel--;
+        }
+    }
+    children[level] = child;
 }
 
 void MK::Node::remove_child(NodeLevel level)
