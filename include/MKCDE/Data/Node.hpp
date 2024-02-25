@@ -3,9 +3,7 @@
 #ifndef MK_NODE_HPP
 #define MK_NODE_HPP
 
-#include <iostream>
 #include <memory>
-#include <vector>
 #include <unordered_map>
 
 namespace MK
@@ -20,11 +18,11 @@ public:
 
     Node(NodeID id);
 
-    void addChild(std::shared_ptr<Node> child);
+    void add_child(std::shared_ptr<Node> child);
 
-    void addChild(NodeLevel level, std::shared_ptr<Node> child);
+    void add_child(NodeLevel level, std::shared_ptr<Node> child);
 
-    void removeChild(NodeLevel level);
+    void remove_child(NodeLevel level);
 };
 }
 
