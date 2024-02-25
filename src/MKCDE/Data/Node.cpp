@@ -1,13 +1,13 @@
 #include <MKCDE/Data/Node.hpp>
 
-MK::Node::Node(ID_Node id) : id(id) {}
+MK::Node::Node(NodeID id) : id(id) {}
 
-void MK::Node::addChild(std::shared_ptr<Node> child) 
+void MK::Node::addChild(NodeLevel level, std::shared_ptr<Node> child)
 {
-    children[child->id] = child;
+    children[level] = child;
 }
 
-void MK::Node::removeChild(ID_Node id) 
+void MK::Node::removeChild(NodeLevel level)
 {
-    children.erase(id);
+    children.erase(level);
 }

@@ -10,18 +10,21 @@
 
 namespace MK
 {
-typedef unsigned int ID_Node;
+typedef unsigned short NodeID;
+typedef unsigned short NodeLevel;
 
 class Node {
 public:
-    ID_Node id;
-    std::unordered_map<ID_Node, std::shared_ptr<Node>> children;
+    NodeID id;
+    std::unordered_map<NodeLevel, std::shared_ptr<Node>> children;
 
-    Node(ID_Node id);
+    Node(NodeID id);
 
     void addChild(std::shared_ptr<Node> child);
 
-    void removeChild(ID_Node id);
+    void addChild(NodeLevel level, std::shared_ptr<Node> child);
+
+    void removeChild(NodeLevel level);
 };
 }
 
