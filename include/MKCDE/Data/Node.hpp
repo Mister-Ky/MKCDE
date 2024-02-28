@@ -27,10 +27,11 @@ public:
     void remove_child(NodeLevel level);
 
     void update_children();
+
+    NodeID id;
 protected:
     virtual void update();
 private:
-    NodeID id;
     std::map<NodeLevel, std::shared_ptr<Node>> children;
 
     friend class NodeTree;
