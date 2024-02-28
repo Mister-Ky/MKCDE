@@ -41,7 +41,7 @@ void MK::Node::update_children()
     }
 }
 
-virtual void MK::Node::update() {}
+void MK::Node::update() {}
 
 void MK::Node::refresh()
 {
