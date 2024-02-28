@@ -23,6 +23,12 @@ public:
     void add_child(NodeLevel level, std::shared_ptr<Node> child);
 
     void remove_child(NodeLevel level);
+
+    void update_children();
+
+    virtual void update();
+private:
+    void refresh();
 };
 }
 

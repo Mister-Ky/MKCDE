@@ -30,3 +30,19 @@ void MK::Node::remove_child(NodeLevel level)
 {
     children.erase(level);
 }
+
+void MK::Node::update_children() 
+{
+    for (auto& child : children) 
+    {
+        child.second->refresh();
+    }
+}
+
+virtual void MK::Node::update() {}
+
+void MK::Node::refresh()
+{
+    update();
+    update_children();
+}
