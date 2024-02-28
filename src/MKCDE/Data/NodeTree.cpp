@@ -12,7 +12,7 @@ void MK::NodeTree::update()
 	parent->refresh();
 }
 
-std::shared_ptr<Node> MK::NodeTree::get_parent()
+std::shared_ptr<MK::Node> MK::NodeTree::get_parent()
 {
 	return parent;
 }
