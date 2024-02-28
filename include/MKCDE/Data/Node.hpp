@@ -11,10 +11,12 @@ namespace MK
 typedef unsigned short NodeID;
 typedef unsigned short NodeLevel;
 
-class Node {
+class NodeTree;
+
+class Node
+{
 public:
-    NodeID id;
-    std::map<NodeLevel, std::shared_ptr<Node>> children;
+    Node();
 
     Node(NodeID id);
 
@@ -25,9 +27,14 @@ public:
     void remove_child(NodeLevel level);
 
     void update_children();
-
+protected:
     virtual void update();
 private:
+    NodeID id;
+    std::map<NodeLevel, std::shared_ptr<Node>> children;
+
+    friend class NodeTree;
+
     void refresh();
 };
 }

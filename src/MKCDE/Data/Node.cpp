@@ -1,5 +1,7 @@
 #include <MKCDE/Data/Node.hpp>
 
+MK::Node::Node() = default;
+
 MK::Node::Node(NodeID id) : id(id) {}
 
 void MK::Node::add_child(std::shared_ptr<Node> child)
