@@ -12,7 +12,7 @@
 //  12             |  1             |  Encryption flag (0x00 - no encryption, 0x01 - EAS, etc.)
 //  13             |  1             |  Compression flag (0x00 - no compression, 0x01 - deflate, etc.)
 //  14-15          |  2             |  Checksum flag (0x00 - CRC32, 0x01 - CRC64, etc.)
-//  16-Variable    |  Variable      |  Checksum (Size is determined by the Checksum flag)
+//  16-[16+Variable|  Variable      |  Checksum (Size is determined by the Checksum flag)
 //  prev-(prev+10) |  10            |  Number of resources
 //  prev-(prev+10) |  10            |  Total size of all resources (in bytes)
 //  prev-(prev+10) |  10            |  Reserved for future use
