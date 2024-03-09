@@ -6,7 +6,7 @@
 #include <map>
 #include <memory>
 
-namespace MK
+namespace mk
 {
 typedef unsigned short NodeID;
 typedef unsigned short NodeLevel;

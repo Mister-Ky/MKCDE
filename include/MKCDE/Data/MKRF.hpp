@@ -41,7 +41,7 @@
 #ifndef MK_MKRF_HPP
 #define MK_MKRF_HPP
 
-namespace MK
+namespace mk
 {
 struct Resource
 {

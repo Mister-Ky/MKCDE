@@ -7,7 +7,7 @@
 #include <SFML/Graphics/RenderTarget.hpp>
 #include <SFML/Graphics/Text.hpp>
 
-namespace MK
+namespace mk
 {
 class Button : public sf::ConvexShape
 {

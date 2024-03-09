@@ -6,7 +6,7 @@
 #include <memory>
 #include <MKCDE/Data/Node.hpp>
 
-namespace MK
+namespace mk
 {
 class NodeTree
 {

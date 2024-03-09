@@ -10,7 +10,7 @@
 #include <functional>
 #include <tuple>
 
-namespace MK
+namespace mk
 {
 class ArgsProcessor
 {

@@ -5,7 +5,7 @@
 
 #include <SFML/Graphics/ConvexShape.hpp>
 
-namespace MK
+namespace mk
 {
 class Triangle : public sf::ConvexShape
 {
