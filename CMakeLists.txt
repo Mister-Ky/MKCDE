@@ -4,7 +4,7 @@ if(POLICY CMP0141)
     cmake_policy(SET CMP0141 NEW)
 endif()
 
-project(mkcde LANGUAGES CXX)
+project(mkcdee LANGUAGES CXX)
 
 
 set(MKCDE_BUILD_CONFIGURATION_RELEASE FALSE CACHE BOOL "release mkcde")
@@ -81,11 +81,11 @@ file(GLOB_RECURSE SOURCES
     "src/MKCDE/*.C"
     "src/MKCDE/*.H"
 )
-add_library(mkcde ${MKCDE_BUILD_KIND} ${SOURCES})
-target_compile_features(mkcde PRIVATE cxx_std_17)
-target_include_directories(mkcde PUBLIC
+add_library(mkcdee ${MKCDE_BUILD_KIND} ${SOURCES})
+target_compile_features(mkcdee PRIVATE cxx_std_17)
+target_include_directories(mkcdee PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
-target_link_libraries(mkcde PUBLIC sfml-system sfml-window sfml-graphics ImGui-SFML)
+target_link_libraries(mkcdee PUBLIC sfml-system sfml-window sfml-graphics ImGui-SFML)
 
 message(STATUS "MKCDE : Build configuration: ${MKCDE_BUILD_TYPE}-${MKCDE_ARCHITECTURE}-${MKCDE_BUILD_KIND}")
