@@ -25,8 +25,8 @@ public:
 
     void parse(int argc, char* argv[]);
 private:
-    std::map<std::string, std::tuple<std::function<void(const std::vector<std::string>&)>, int, int>> commands;
-    char commandSymbol;
+    std::map<std::string, std::tuple<std::function<void(const std::vector<std::string>&)>, int, int>> m_commands;
+    char m_commandSymbol;
 };
 }
 

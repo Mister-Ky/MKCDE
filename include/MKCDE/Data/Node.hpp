@@ -32,7 +32,7 @@ public:
 protected:
     virtual void update();
 private:
-    std::map<NodeLevel, std::shared_ptr<Node>> children;
+    std::map<NodeLevel, std::shared_ptr<Node>> m_children;
 
     friend class NodeTree;
 

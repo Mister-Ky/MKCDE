@@ -4,15 +4,15 @@ MK::NodeTree::NodeTree() = default;
 
 MK::NodeTree::NodeTree(std::shared_ptr<Node>& parent)
 {
-	this->parent = parent;
+	m_parent = parent;
 }
 
 void MK::NodeTree::update()
 {
-	parent->refresh();
+	m_parent->refresh();
 }
 
 std::shared_ptr<MK::Node> MK::NodeTree::get_parent()
 {
-	return parent;
+	return m_parent;
 }

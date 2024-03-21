@@ -19,7 +19,7 @@ public:
 
 	std::shared_ptr<Node> get_parent();
 private:
-	std::shared_ptr<Node> parent;
+	std::shared_ptr<Node> m_parent;
 };
 }
 

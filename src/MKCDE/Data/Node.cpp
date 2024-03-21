@@ -6,36 +6,36 @@ MK::Node::Node(NodeID id) : id(id) {}
 
 void MK::Node::add_child(std::shared_ptr<Node> child)
 {
-    children[children.size() + 1] = child;
+    m_children[m_children.size() + 1] = child;
 }
 
 void MK::Node::add_child(NodeLevel level, std::shared_ptr<Node> child)
 {
-    if (level == 0 || children.size() + 1 < level) 
+    if (level == 0 || m_children.size() + 1 < level) 
     {
         return;
     }
-    auto it = children.find(level);
-    if (it != children.end())
+    auto it = m_children.find(level);
+    if (it != m_children.end())
     {
-        NodeLevel tempLevel = children.size();
+        NodeLevel tempLevel = m_children.size();
         while (tempLevel != level - 1)
         {
-            children[tempLevel + 1] = children[tempLevel];
+            m_children[tempLevel + 1] = m_children[tempLevel];
             tempLevel--;
         }
     }
-    children[level] = child;
+    m_children[level] = child;
 }
 
 void MK::Node::remove_child(NodeLevel level)
 {
-    children.erase(level);
+    m_children.erase(level);
 }
 
 void MK::Node::update_children() 
 {
-    for (auto& child : children) 
+    for (auto& child : m_children) 
     {
         child.second->refresh();
     }
