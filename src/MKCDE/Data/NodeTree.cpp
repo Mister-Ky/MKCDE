@@ -1,18 +1,18 @@
 #include <MKCDE/Data/NodeTree.hpp>
 
-MK::NodeTree::NodeTree() = default;
+mk::NodeTree::NodeTree() = default;
 
-MK::NodeTree::NodeTree(std::shared_ptr<Node>& parent)
+mk::NodeTree::NodeTree(std::shared_ptr<Node>& parent)
 {
 	m_parent = parent;
 }
 
-void MK::NodeTree::update()
+void mk::NodeTree::update()
 {
 	m_parent->refresh();
 }
 
-std::shared_ptr<MK::Node> MK::NodeTree::get_parent()
+std::shared_ptr<mk::Node> mk::NodeTree::get_parent()
 {
 	return m_parent;
 }

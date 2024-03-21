@@ -1,10 +1,8 @@
 #include <MKCDE/Graphics/Button.hpp>
 
-namespace MK
-{
-Button::Button() = default;
+mk::Button::Button() = default;
 
-void Button::shapeToConvexShape(const sf::Shape* shape)
+void mk::Button::shapeToConvexShape(const sf::Shape* shape)
 {
     for (size_t i = 0; i < getPointCount(); i++)
     {
@@ -21,26 +19,25 @@ void Button::shapeToConvexShape(const sf::Shape* shape)
     setTextureRect(shape->getTextureRect());
 }
 
-Button::Button(const sf::Shape& shape)
+mk::Button::Button(const sf::Shape& shape)
   : sf::ConvexShape(shape.getPointCount()), m_text()
 {
     shapeToConvexShape(&shape);
 }
-Button::Button(const sf::Shape& shape, const sf::Text& text)
+mk::Button::Button(const sf::Shape& shape, const sf::Text& text)
   : sf::ConvexShape(shape.getPointCount()), m_text(text)
 {
     shapeToConvexShape(&shape);
 }
 
-void Button::setText(const sf::Text& text)
+void mk::Button::setText(const sf::Text& text)
 {
     m_text = text;
 }
 
-void Button::draw(sf::RenderTarget& target, sf::RenderStates states) const
+void mk::Button::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
     sf::ConvexShape shape(*this);
     target.draw(shape, states);
     target.draw(m_text, states);
-}
 }

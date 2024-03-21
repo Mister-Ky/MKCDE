@@ -7,7 +7,8 @@ namespace mk
 {
 class App
 {
-
+public:
+	App();
 };
 }
 
