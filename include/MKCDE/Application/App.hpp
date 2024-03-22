@@ -19,8 +19,8 @@ public:
 	
 	virtual byte run() = 0;
 protected:
-	virtual byte init() = 0;
-	virtual byte init(int argc, char* argv[]) = 0;
+	virtual void init() = 0;
+	virtual void init(int argc, char* argv[]) = 0;
 	virtual void shutdown() = 0;
 
 	NodeTree tree;
