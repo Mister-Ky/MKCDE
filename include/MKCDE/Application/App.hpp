@@ -12,14 +12,18 @@ namespace mk
 class App : public sf::NonCopyable
 {
 public:
-	virtual App() = 0;
-	virtual ~App() = 0;
+	App();
+	App(int argc, char* argv[]);
 
-	virtual byte init() = 0;
+	virtual ~App();
+	
 	virtual byte run() = 0;
-	virtual void shutdown() = 0;
 protected:
-	virtual NodeTree tree = 0;
+	virtual byte init() = 0;
+	virtual byte init(int argc, char* argv[]) = 0;
+	virtual void shutdown() = 0;
+
+	NodeTree tree;
 };
 }
 
