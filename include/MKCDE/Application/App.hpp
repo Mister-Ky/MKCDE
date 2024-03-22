@@ -17,11 +17,11 @@ public:
 
 	virtual ~App();
 	
-	virtual byte run() = 0;
+	virtual byte run();
 protected:
-	virtual void init() = 0;
-	virtual void init(int argc, char* argv[]) = 0;
-	virtual void shutdown() = 0;
+	virtual void init();
+	virtual void init(int argc, char* argv[]);
+	virtual void shutdown();
 
 	NodeTree tree;
 };
