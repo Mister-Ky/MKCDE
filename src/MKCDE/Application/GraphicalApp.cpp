@@ -13,7 +13,7 @@ mk::GraphicalApp::GraphicalApp(int argc, char* argv[])
 
 mk::GraphicalApp::~GraphicalApp() {}
 
-byte mk::GraphicalApp::run() const
+byte mk::GraphicalApp::run()
 { 
 	window->setFramerateLimit(get_frameRate());
 	while (window->isOpen())
@@ -29,7 +29,7 @@ byte mk::GraphicalApp::run() const
 void mk::GraphicalApp::init() {}
 void mk::GraphicalApp::init(int argc, char* argv[]) {}
 byte mk::GraphicalApp::update() const { return EXIT_SUCCESS; }
-void mk::GraphicalApp::shutdown() const {}
+void mk::GraphicalApp::shutdown() {}
 
 void mk::GraphicalApp::set_frameRate(const int new_frameRate)
 {

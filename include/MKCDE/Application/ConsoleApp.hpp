@@ -19,12 +19,12 @@ public:
 
 	virtual ~ConsoleApp();
 	
-	byte run() const;
+	byte run();
 protected:
 	virtual void init();
 	virtual void init(int argc, char* argv[]);
 	virtual byte update() const;
-	virtual void shutdown() const;
+	virtual void shutdown();
 
 	void set_frameRate(const int new_frameRate);
 	int get_frameRate() const;
