@@ -5,6 +5,7 @@
 
 #include <memory>
 #include <MKCDE/Data/NodeTree.hpp>
+#include <SFML/Graphics.hpp>
 #include <SFML/System/NonCopyable.hpp>
 #include <Windows.h>
 
