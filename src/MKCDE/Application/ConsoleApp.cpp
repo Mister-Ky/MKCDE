@@ -41,7 +41,7 @@ byte mk::ConsoleApp::run() const
 void mk::ConsoleApp::init() {}
 void mk::ConsoleApp::init(int argc, char* argv[]) {}
 byte mk::ConsoleApp::update() const { return EXIT_SUCCESS; }
-void mk::ConsoleApp::shutdown() {}
+void mk::ConsoleApp::shutdown() const {}
 
 void mk::ConsoleApp::set_frameRate(const int new_frameRate)
 {

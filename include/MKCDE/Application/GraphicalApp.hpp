@@ -26,7 +26,7 @@ protected:
 	virtual void init();
 	virtual void init(int argc, char* argv[]);
 	virtual byte update() const;
-	virtual void shutdown();
+	virtual void shutdown() const;
 
 	void set_frameRate(const int new_frameRate);
 	int get_frameRate() const;
