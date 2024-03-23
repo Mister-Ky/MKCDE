@@ -32,6 +32,6 @@ void mk::GraphicalApp::shutdown() {}
 void mk::GraphicalApp::set_frameRate(const int new_frameRate)
 {
 	m_frameRate = new_frameRate;
-	window.setFramerateLimit(m_frameRate);
+	window->setFramerateLimit(m_frameRate);
 }
 int mk::GraphicalApp::get_frameRate() const { return m_frameRate; }
