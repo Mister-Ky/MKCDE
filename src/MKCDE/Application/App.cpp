@@ -1,5 +1,8 @@
 #include <MKCDE/Application/App.hpp>
 
+#include <chrono>
+#include <thread>
+
 mk::App::App()
 {
 #ifdef MK_APP_GRAPHICS_MODE

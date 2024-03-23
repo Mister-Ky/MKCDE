@@ -3,6 +3,7 @@
 #ifndef MK_APP_HPP
 #define MK_APP_HPP
 
+#include <memory>
 #include <MKCDE/Data/NodeTree.hpp>
 #include <SFML/System/NonCopyable.hpp>
 #include <Windows.h>
@@ -33,7 +34,7 @@ protected:
 	AppMode app_mode;
 
 #ifdef MK_APP_GRAPHICS_MODE
-	sf::RenderWindow window;
+	std::unique_ptr<sf::RenderWindow> window;
 #elif MK_APP_CONSOLE_MODE
 	
 #else
