@@ -23,6 +23,7 @@ byte mk::GraphicalApp::run() const
 			return EXIT_FAILURE;
 		}
 	}
+	return EXIT_SUCCESS;
 }
 void mk::GraphicalApp::init() {}
 void mk::GraphicalApp::init(int argc, char* argv[]) {}
