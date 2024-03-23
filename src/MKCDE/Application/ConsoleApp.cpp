@@ -6,12 +6,12 @@
 mk::ConsoleApp::ConsoleApp()
 {
 	app_mode = CONSOLE_MODE;
-	init();
+	//init();
 }
 mk::ConsoleApp::ConsoleApp(int argc, char* argv[])
 {
 	app_mode = CONSOLE_MODE;
-	init(argc, argv);
+	//init(argc, argv);
 }
 
 mk::ConsoleApp::~ConsoleApp() {}

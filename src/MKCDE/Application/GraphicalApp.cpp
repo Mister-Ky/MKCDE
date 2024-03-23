@@ -3,12 +3,12 @@
 mk::GraphicalApp::GraphicalApp()
 {
 	app_mode = GRAPHICS_MODE;
-	init();
+	//init();
 }
 mk::GraphicalApp::GraphicalApp(int argc, char* argv[])
 {
 	app_mode = GRAPHICS_MODE;
-	init(argc, argv);
+	//init(argc, argv);
 }
 
 mk::GraphicalApp::~GraphicalApp() {}
