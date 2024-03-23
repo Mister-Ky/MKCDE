@@ -19,7 +19,7 @@ public:
 
 	virtual ~App();
 	
-	virtual byte run() const;
+	byte run() const;
 protected:
 	virtual void init();
 	virtual void init(int argc, char* argv[]);
