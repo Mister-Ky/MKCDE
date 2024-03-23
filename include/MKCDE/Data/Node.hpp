@@ -18,15 +18,15 @@ class Node
 public:
     Node();
 
-    Node(NodeID id);
+    Node(const NodeID id);
 
-    void add_child(std::shared_ptr<Node> child);
+    void add_child(const std::shared_ptr<Node> child);
 
-    void add_child(NodeLevel level, std::shared_ptr<Node> child);
+    void add_child(const NodeLevel level, const std::shared_ptr<Node> child);
 
-    void remove_child(NodeLevel level);
+    void remove_child(const NodeLevel level);
 
-    NodeID get_id();
+    NodeID get_id() const;
 protected:
     virtual void update();
 private:

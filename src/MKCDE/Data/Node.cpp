@@ -2,14 +2,14 @@
 
 mk::Node::Node() = default;
 
-mk::Node::Node(NodeID id) : m_id(id) {}
+mk::Node::Node(const NodeID id) : m_id(id) {}
 
-void mk::Node::add_child(std::shared_ptr<Node> child)
+void mk::Node::add_child(const std::shared_ptr<Node> child)
 {
     m_children[m_children.size() + 1] = child;
 }
 
-void mk::Node::add_child(NodeLevel level, std::shared_ptr<Node> child)
+void mk::Node::add_child(const NodeLevel level, const std::shared_ptr<Node> child)
 {
     if (level == 0 || m_children.size() + 1 < level) 
     {
@@ -28,12 +28,12 @@ void mk::Node::add_child(NodeLevel level, std::shared_ptr<Node> child)
     m_children[level] = child;
 }
 
-void mk::Node::remove_child(NodeLevel level)
+void mk::Node::remove_child(const NodeLevel level)
 {
     m_children.erase(level);
 }
 
-mk::NodeID mk::Node::get_id()
+mk::NodeID mk::Node::get_id() const
 {
     return m_id;
 }
