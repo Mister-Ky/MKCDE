@@ -2,7 +2,7 @@
 
 mk::Node::Node() = default;
 
-mk::Node::Node(NodeID id) : id(id) {}
+mk::Node::Node(NodeID id) : m_id(id) {}
 
 void mk::Node::add_child(std::shared_ptr<Node> child)
 {
