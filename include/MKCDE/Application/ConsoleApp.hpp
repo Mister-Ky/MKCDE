@@ -1,9 +1,8 @@
 #pragma once
 
-#ifndef MK_APP_HPP
-#define MK_APP_HPP
+#ifndef MK_CONSOLE_APP_HPP
+#define MK_CONSOLE_APP_HPP
 
-#include <memory>
 #include <MKCDE/Data/NodeTree.hpp>
 #include <SFML/System/NonCopyable.hpp>
 #include <Windows.h>
@@ -12,13 +11,13 @@ namespace mk
 {
 enum AppMode { GRAPHICS_MODE = 1, CONSOLE_MODE = 2 };
 
-class App : public sf::NonCopyable
+class ConsoleApp : public sf::NonCopyable
 {
 public:
-	App();
-	App(int argc, char* argv[]);
+	ConsoleApp();
+	ConsoleApp(int argc, char* argv[]);
 
-	virtual ~App();
+	virtual ~ConsoleApp();
 	
 	byte run() const;
 protected:
@@ -32,14 +31,6 @@ protected:
 
 	NodeTree tree;
 	AppMode app_mode;
-
-#ifdef MK_APP_GRAPHICS_MODE
-	std::unique_ptr<sf::RenderWindow> window;
-#elif MK_APP_CONSOLE_MODE
-	
-#else
-#error "Please define either MK_APP_GRAPHICS_MODE or MK_APP_CONSOLE_MODE"
-#endif
 private:
 	int m_frameRate;
 };
