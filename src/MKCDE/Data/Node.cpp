@@ -33,6 +33,13 @@ void mk::Node::remove_child(NodeLevel level)
     m_children.erase(level);
 }
 
+mk::NodeID mk::Node::get_id()
+{
+    return m_id;
+}
+
+void mk::Node::update() {}
+
 void mk::Node::update_children()
 {
     for (auto& child : m_children) 
@@ -40,8 +47,6 @@ void mk::Node::update_children()
         child.second->refresh();
     }
 }
-
-void mk::Node::update() {}
 
 void mk::Node::refresh()
 {
