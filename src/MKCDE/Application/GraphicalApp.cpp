@@ -28,7 +28,7 @@ byte mk::GraphicalApp::run()
 }
 void mk::GraphicalApp::init() {}
 void mk::GraphicalApp::init(int argc, char* argv[]) {}
-byte mk::GraphicalApp::update() const { return EXIT_SUCCESS; }
+byte mk::GraphicalApp::update() { return EXIT_SUCCESS; }
 void mk::GraphicalApp::shutdown() {}
 
 void mk::GraphicalApp::set_frameRate(const int new_frameRate)

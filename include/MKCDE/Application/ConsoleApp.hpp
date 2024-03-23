@@ -23,7 +23,7 @@ public:
 protected:
 	virtual void init();
 	virtual void init(int argc, char* argv[]);
-	virtual byte update() const;
+	virtual byte update();
 	virtual void shutdown();
 
 	void set_frameRate(const int new_frameRate);
