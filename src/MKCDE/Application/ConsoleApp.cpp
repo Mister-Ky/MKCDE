@@ -24,6 +24,7 @@ byte mk::ConsoleApp::run() const
 
 		if (update() != EXIT_SUCCESS)
 		{
+			shutdown();
 			return EXIT_FAILURE;
 		}
 
