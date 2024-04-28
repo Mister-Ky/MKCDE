@@ -3,8 +3,10 @@
 #ifndef MK_GRAPHICAL_APP_HPP
 #define MK_GRAPHICAL_APP_HPP
 
+// The MK_APP_CONTINUE_SUCCESSFULLY constant indicates the successful continuation of the application
+#define MK_APP_CONTINUE_SUCCESSFULLY 61
+
 #include <memory>
-#include <MKCDE/Application/AppMode.hpp>
 #include <MKCDE/Data/NodeTree.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/System/NonCopyable.hpp>
@@ -12,6 +14,8 @@
 
 namespace mk
 {
+//enum AppMode { GRAPHICS_MODE = 1, CONSOLE_MODE = 2 };
+
 class GraphicalApp : public sf::NonCopyable
 {
 public:
@@ -31,7 +35,7 @@ protected:
 	int get_frameRate() const;
 
 	NodeTree tree;
-	AppMode app_mode;
+	//AppMode app_mode;
 
 	std::unique_ptr<sf::RenderWindow> window;
 private:

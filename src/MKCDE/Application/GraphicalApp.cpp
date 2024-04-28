@@ -2,12 +2,12 @@
 
 mk::GraphicalApp::GraphicalApp()
 {
-	app_mode = GRAPHICS_MODE;
+	//app_mode = GRAPHICS_MODE;
 	//init();
 }
 mk::GraphicalApp::GraphicalApp(int argc, char* argv[])
 {
-	app_mode = GRAPHICS_MODE;
+	//app_mode = GRAPHICS_MODE;
 	//init(argc, argv);
 }
 
@@ -18,13 +18,14 @@ byte mk::GraphicalApp::run()
 	window->setFramerateLimit(get_frameRate());
 	while (window->isOpen())
 	{
-		if (update() != EXIT_SUCCESS)
+		byte update_return = update();
+		if (update_return != MK_APP_CONTINUE_SUCCESSFULLY)
 		{
 			shutdown();
-			return EXIT_FAILURE;
+			return update_return;
 		}
 	}
-	return EXIT_SUCCESS;
+	return EXIT_FAILURE;
 }
 void mk::GraphicalApp::init() {}
 void mk::GraphicalApp::init(int argc, char* argv[]) {}
