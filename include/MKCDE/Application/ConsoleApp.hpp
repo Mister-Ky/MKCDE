@@ -3,14 +3,13 @@
 #ifndef MK_CONSOLE_APP_HPP
 #define MK_CONSOLE_APP_HPP
 
+#include <MKCDE/Application/AppMode.hpp>
 #include <MKCDE/Data/NodeTree.hpp>
 #include <SFML/System/NonCopyable.hpp>
 #include <Windows.h>
 
 namespace mk
 {
-enum AppMode { GRAPHICS_MODE = 1, CONSOLE_MODE = 2 };
-
 class ConsoleApp : public sf::NonCopyable
 {
 public:

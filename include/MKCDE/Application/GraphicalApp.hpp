@@ -4,6 +4,7 @@
 #define MK_GRAPHICAL_APP_HPP
 
 #include <memory>
+#include <MKCDE/Application/AppMode.hpp>
 #include <MKCDE/Data/NodeTree.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/System/NonCopyable.hpp>
@@ -11,8 +12,6 @@
 
 namespace mk
 {
-enum AppMode { GRAPHICS_MODE = 1, CONSOLE_MODE = 2 };
-
 class GraphicalApp : public sf::NonCopyable
 {
 public:
