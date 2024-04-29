@@ -35,6 +35,7 @@ protected:
 	int get_frameRate() const;
 
 	NodeTree tree;
+	NodeTree* get_tree();
 	//AppMode app_mode;
 
 	std::unique_ptr<sf::RenderWindow> window;

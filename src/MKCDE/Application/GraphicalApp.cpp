@@ -38,3 +38,4 @@ void mk::GraphicalApp::set_frameRate(const int new_frameRate)
 	window->setFramerateLimit(m_frameRate);
 }
 int mk::GraphicalApp::get_frameRate() const { return m_frameRate; }
+mk::NodeTree* mk::GraphicalApp::get_tree() { return &tree; }
