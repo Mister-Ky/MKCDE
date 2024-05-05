@@ -2,23 +2,6 @@
 
 mk::Button::Button() = default;
 
-void mk::Button::shapeToConvexShape(const sf::Shape* shape)
-{
-    for (size_t i = 0; i < getPointCount(); i++)
-    {
-        setPoint(i, shape->getPoint(i));
-    }
-    setFillColor(shape->getFillColor());
-    setOrigin(shape->getOrigin());
-    setOutlineColor(shape->getOutlineColor());
-    setOutlineThickness(shape->getOutlineThickness());
-    setPosition(shape->getPosition());
-    setRotation(shape->getRotation());
-    setScale(shape->getScale());
-    setTexture(shape->getTexture());
-    setTextureRect(shape->getTextureRect());
-}
-
 mk::Button::Button(const sf::Shape& shape)
   : sf::ConvexShape(shape.getPointCount()), m_text()
 {
