@@ -3,6 +3,7 @@
 #ifndef MK_BUTTON_HPP
 #define MK_BUTTON_HPP
 
+#include <MKCDE/Graphics/Utilities/centerTextInRectangle.hpp>
 #include <SFML/Graphics.hpp>
 #include <string>
 
@@ -17,6 +18,8 @@ public:
 
     sf::RectangleShape* getShape();
     sf::Text* getText();
+
+    void centerText();
 private:
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 

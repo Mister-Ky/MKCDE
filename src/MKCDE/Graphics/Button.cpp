@@ -26,6 +26,11 @@ sf::Text* mk::Button::getText()
     return &m_text;
 }
 
+void mk::Button::centerText()
+{
+    mk::centerTextInRectangle(m_shape, m_text);
+}
+
 void mk::Button::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
     states.transform *= getTransform();
