@@ -3,22 +3,24 @@
 #ifndef MK_BUTTON_HPP
 #define MK_BUTTON_HPP
 
-#include <SFML/Graphics/RectangleShape.hpp>
-#include <SFML/Graphics/RenderTarget.hpp>
-#include <SFML/Graphics/Text.hpp>
+#include <SFML/Graphics/Graphics.hpp>
+#include <string>
 
 namespace mk
 {
-class Button : public sf::RectangleShape
+class Button : public sf::Transformable, public sf::Drawable
 {
 public:
     Button();
-    Button(const sf::Text& text);
+    Button(const sf::Vector2f& size);
+    Button(const sf::Vector2f& size, const sf::Font& font);
 
-    void setText(const sf::Text& text);
+    sf::RectangleShape* getShape();
+    sf::Text* getText();
 private:
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
+    sf::RectangleShape m_shape;
     sf::Text m_text;
 };
 }

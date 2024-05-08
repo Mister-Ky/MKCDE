@@ -2,18 +2,33 @@
 
 mk::Button::Button() = default;
 
-mk::Button::Button(const sf::Text& text)
-  : sf::RectangleShape(), m_text(text)
+mk::Button::Button(const sf::Vector2f& size)
+    : m_shape(), m_text()
 {
-    
+    m_shape.setSize(size);
 }
 
-void mk::Button::setText(const sf::Text& text)
+mk::Button::Button(const sf::Vector2f& size, const sf::Font& font)
+  : m_shape(), m_text()
 {
-    m_text = text;
+    m_shape.setSize(size);
+    m_text.setFont(font);
+    m_text.setCharacterSize(20);
+}
+
+sf::RectangleShape* mk::Button::getShape()
+{
+    return &m_shape;
+}
+
+sf::Text* mk::Button::getText()
+{
+    return &m_text;
 }
 
 void mk::Button::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
+    states.transform *= getTransform();
+    target.draw(m_shape, states);
     target.draw(m_text, states);
 }
