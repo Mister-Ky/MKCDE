@@ -5,6 +5,8 @@
 
 #include <SFML/Graphics.hpp>
 
+namespace mk
+{
 class Slider : public sf::Drawable, public sf::Transformable
 {
 public:
@@ -17,5 +19,6 @@ private:
 
     sf::RectangleShape m_shape;
 };
+}
 
 #endif
