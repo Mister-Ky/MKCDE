@@ -3,7 +3,7 @@
 #ifndef MK_BUTTON_HPP
 #define MK_BUTTON_HPP
 
-#include <SFML/Graphics/Graphics.hpp>
+#include <SFML/Graphics.hpp>
 #include <string>
 
 namespace mk
