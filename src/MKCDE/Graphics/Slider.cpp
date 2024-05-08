@@ -1,27 +1,29 @@
 #include <MKCDE/Graphics/Slider.hpp>
 
-mk::Slider::Slider() = default;
+#include <cmath>
 
-mk::Slider::Slider(const sf::Texture texture)
+Slider::Slider() = default;
+
+Slider::Slider(const sf::Texture texture)
 {
-    m_sprite.setTexture(texture, true);
-    m_shape.setSize(texture.getSize());
+    m_shape.setTexture(&texture);
+    m_shape.setSize(sf::Vector2f(texture.getSize()));
 }
 
-void mk::Slider::update(sf::Event& event, sf::RenderWindow& window)
+void Slider::update(const sf::RenderWindow& window, const sf::Event& event)
 {
-    if (event.type == sf::Event::MouseButtonPressed)
-    {
-        if (event.mouseButton.button == sf::Mouse::Left)
-        {
-            sf::Vector2i mousePos = sf::Mouse::getPosition(window);
-        }
-    }
+    sf::Vector2f pos = m_shape.getPosition();
+    sf::Vector2f mousePos = sf::Vector2f(sf::Mouse::getPosition(window));
+    pos = mousePos;
+    auto angle = getRotation() * 3.1415f / 180.0f;
+    m_shape.setPosition(
+        pos.x * cos(angle) + pos.y * sin(angle),
+        -pos.x * sin(angle) + pos.y * cos(angle)
+    );
 }
 
-void mk::Slider::draw(sf::RenderTarget& target, sf::RenderStates states) const
+void Slider::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
     states.transform *= getTransform();
-    target.draw(m_sprite, states);
-    //target.draw(m_shape, states);
+    target.draw(m_shape, states);
 }
