@@ -7,7 +7,7 @@
 #define MK_APP_CONTINUE_SUCCESSFULLY 61
 
 #include <memory>
-#include <MKCDE/Data/NodeTree.hpp>
+#include <MKCDE/Application/NodeTree.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/System/NonCopyable.hpp>
 #include <Windows.h>
