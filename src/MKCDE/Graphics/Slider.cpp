@@ -4,10 +4,10 @@
 
 mk::Slider::Slider() = default;
 
-mk::Slider::Slider(const sf::Texture texture)
+mk::Slider::Slider(const sf::Texture* texture)
 {
-    m_shape.setTexture(&texture);
-    m_shape.setSize(sf::Vector2f(texture.getSize()));
+    m_shape.setTexture(texture);
+    m_shape.setSize(sf::Vector2f(texture->getSize()));
 }
 
 void mk::Slider::update(const sf::RenderWindow& window, const sf::Event& event)

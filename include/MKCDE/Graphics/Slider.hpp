@@ -11,7 +11,7 @@ class Slider : public sf::Drawable, public sf::Transformable
 {
 public:
     Slider();
-    Slider(const sf::Texture texture);
+    Slider(const sf::Texture* texture);
 
     void update(const sf::RenderWindow& window, const sf::Event& event);
 private:
