@@ -19,6 +19,9 @@ public:
     sf::RectangleShape* getShape();
     sf::Text* getText();
 
+    bool getIsHovered() const;
+    bool getIsPressed() const;
+
     void centerText();
 
     void update(sf::RenderWindow& window);

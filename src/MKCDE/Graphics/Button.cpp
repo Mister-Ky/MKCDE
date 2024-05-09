@@ -26,6 +26,16 @@ sf::Text* mk::Button::getText()
     return &m_text;
 }
 
+bool mk::Button::getIsHovered() const
+{
+    return isHovered;
+}
+
+bool mk::Button::getIsPressed() const
+{
+    return isPressed;
+}
+
 void mk::Button::centerText()
 {
     mk::centerTextInRectangle(m_shape, m_text);
