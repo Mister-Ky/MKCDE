@@ -21,10 +21,11 @@ public:
 
     bool getIsHovered() const;
     bool getIsPressed() const;
+    bool getOldIsPressed() const;
 
     void centerText();
 
-    void update(sf::RenderWindow& window);
+    void update(const sf::RenderWindow& window);
 
     sf::Mouse::Button mouseButtonToReact = sf::Mouse::Button::Left;
 private:
@@ -32,6 +33,7 @@ private:
 
     bool isHovered;
     bool isPressed;
+    bool oldIsPressed;
 
     sf::RectangleShape m_shape;
     sf::Text m_text;

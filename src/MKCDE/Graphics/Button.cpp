@@ -36,13 +36,19 @@ bool mk::Button::getIsPressed() const
     return isPressed;
 }
 
+bool mk::Button::getOldIsPressed() const
+{
+    return oldIsPressed;
+}
+
 void mk::Button::centerText()
 {
     mk::centerTextInRectangle(m_shape, m_text);
 }
 
-void mk::Button::update(sf::RenderWindow& window) 
+void mk::Button::update(const sf::RenderWindow& window) 
 {
+    oldIsPressed = isPressed;
     if (m_shape.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window))))
     {
         isHovered = true;
