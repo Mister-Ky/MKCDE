@@ -20,8 +20,15 @@ public:
     sf::Text* getText();
 
     void centerText();
+
+    void update(sf::RenderWindow& window);
+
+    sf::Mouse::Button mouseButtonToReact = sf::Mouse::Button::Left;
 private:
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
+
+    bool isHovered;
+    bool isPressed;
 
     sf::RectangleShape m_shape;
     sf::Text m_text;

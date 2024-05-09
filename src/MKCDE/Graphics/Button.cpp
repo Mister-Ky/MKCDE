@@ -31,6 +31,27 @@ void mk::Button::centerText()
     mk::centerTextInRectangle(m_shape, m_text);
 }
 
+void mk::Button::update(sf::RenderWindow& window) 
+{
+    if (m_shape.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window))))
+    {
+        isHovered = true;
+        if (sf::Mouse::isButtonPressed(mouseButtonToReact))
+        {
+            isPressed = true;
+        }
+        else 
+        {
+            isPressed = false;
+        }
+    }
+    else 
+    {
+        isHovered = false;
+        isPressed = false;
+    }
+}
+
 void mk::Button::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
     states.transform *= getTransform();
