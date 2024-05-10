@@ -54,7 +54,10 @@ void mk::Button::update(const sf::RenderWindow& window)
         isHovered = true;
         if (sf::Mouse::isButtonPressed(mouseButtonToReact))
         {
-            isPressed = true;
+            if (!isPressed)
+            {
+                isPressed = true;
+            }
         }
         else 
         {
