@@ -38,6 +38,8 @@ protected:
 	NodeTree* get_tree();
 	//AppMode app_mode;
 
+	bool initializationSuccessful;
+
 	std::unique_ptr<sf::RenderWindow> window;
 private:
 	int m_frameRate;

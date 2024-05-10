@@ -15,14 +15,17 @@ mk::GraphicalApp::~GraphicalApp() {}
 
 byte mk::GraphicalApp::run()
 { 
-	window->setFramerateLimit(get_frameRate());
-	while (window->isOpen())
+	if (initializationSuccessful)
 	{
-		byte update_return = update();
-		if (update_return != MK_APP_CONTINUE_SUCCESSFULLY)
+		window->setFramerateLimit(get_frameRate());
+		while (window->isOpen())
 		{
-			shutdown();
-			return update_return;
+			byte update_return = update();
+			if (update_return != MK_APP_CONTINUE_SUCCESSFULLY)
+			{
+				shutdown();
+				return update_return;
+			}
 		}
 	}
 	return EXIT_FAILURE;
