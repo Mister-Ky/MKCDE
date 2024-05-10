@@ -48,7 +48,7 @@ void mk::Button::centerText()
 
 void mk::Button::update(const sf::RenderWindow& window) 
 {
-    if (sf::Mouse::isButtonPressed(mouseButtonToReact) && !m_click)
+    if (sf::Mouse::isButtonPressed(mouseButtonToReact))
     {
         m_click = true;
     }
