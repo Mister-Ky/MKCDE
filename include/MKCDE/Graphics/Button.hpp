@@ -20,8 +20,9 @@ public:
     sf::Text* getText();
 
     bool getIsHovered() const;
-    bool getIsPressed() const;
-    bool getOldIsPressed() const;
+    bool getIsPressedMouseButton() const;
+    bool getOldIsPressedMouseButton() const;
+    bool getClick() const;
 
     void centerText();
 
@@ -32,8 +33,8 @@ private:
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
     bool m_isHovered;
-    bool m_isPressed;
-    bool m_oldIsPressed;
+    bool m_isPressedMouseButton;
+    bool m_oldIsPressedMouseButton;
 
     sf::RectangleShape m_shape;
     sf::Text m_text;
