@@ -34,7 +34,6 @@ private:
     bool m_isHovered;
     bool m_isPressed;
     bool m_oldIsPressed;
-    bool m_click;
 
     sf::RectangleShape m_shape;
     sf::Text m_text;
