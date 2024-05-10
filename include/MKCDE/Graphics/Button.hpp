@@ -20,21 +20,14 @@ public:
     sf::Text* getText();
 
     bool getIsHovered() const;
-    bool getIsPressedMouseButton() const;
-    bool getOldIsPressedMouseButton() const;
-    bool getClick() const;
 
     void centerText();
 
     void update(const sf::RenderWindow& window);
-
-    sf::Mouse::Button mouseButtonToReact = sf::Mouse::Button::Left;
 private:
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
     bool m_isHovered;
-    bool m_isPressedMouseButton;
-    bool m_oldIsPressedMouseButton;
 
     sf::RectangleShape m_shape;
     sf::Text m_text;
@@ -42,3 +35,28 @@ private:
 }
 
 #endif
+
+/// 
+/// //button click:
+/// 
+/// sf::Event event;
+/// mk::Button button(sf::Vector2f(width, height));
+/// button.update(window);
+/// ...
+/// while (window.pollEvent(event))
+/// {
+///     if (event.type == sf::Event::MouseButtonPressed)
+///     {
+///         if (event.mouseButton.button == sf::Mouse::Left) //mouse button
+///         {
+///             if (button.getIsHovered())
+///             {
+///                 //code
+///             }
+///         }
+///     }
+/// }
+/// window.clear();
+/// winwow.draw(button);
+/// window.display();
+/// 
