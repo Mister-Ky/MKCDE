@@ -27,7 +27,10 @@ byte mk::GraphicalApp::run()
 				return update_return;
 			}
 		}
+		shutdown();
+		return EXIT_FAILURE;
 	}
+	shutdown();
 	return EXIT_FAILURE;
 }
 void mk::GraphicalApp::init() {}
