@@ -28,17 +28,17 @@ sf::Text* mk::Button::getText()
 
 bool mk::Button::getIsHovered() const
 {
-    return isHovered;
+    return m_isHovered;
 }
 
 bool mk::Button::getIsPressed() const
 {
-    return isPressed;
+    return m_isPressed;
 }
 
 bool mk::Button::getOldIsPressed() const
 {
-    return oldIsPressed;
+    return m_oldIsPressed;
 }
 
 void mk::Button::centerText()
@@ -48,26 +48,31 @@ void mk::Button::centerText()
 
 void mk::Button::update(const sf::RenderWindow& window) 
 {
-    oldIsPressed = isPressed;
+    if (sf::Mouse::isButtonPressed(mouseButtonToReact) && !m_click)
+    {
+        m_click = true;
+    }
+    else
+    {
+        m_click = false;
+    }
+    m_oldIsPressed = m_isPressed;
     if (m_shape.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window))))
     {
-        isHovered = true;
-        if (sf::Mouse::isButtonPressed(mouseButtonToReact))
+        m_isHovered = true;
+        if (m_click)
         {
-            if (!isPressed)
-            {
-                isPressed = true;
-            }
+            m_isPressed = true;
         }
         else 
         {
-            isPressed = false;
+            m_isPressed = false;
         }
     }
     else 
     {
-        isHovered = false;
-        isPressed = false;
+        m_isHovered = false;
+        m_isPressed = false;
     }
 }
 
