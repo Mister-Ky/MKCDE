@@ -31,9 +31,10 @@ public:
 private:
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
-    bool isHovered;
-    bool isPressed;
-    bool oldIsPressed;
+    bool m_isHovered;
+    bool m_isPressed;
+    bool m_oldIsPressed;
+    bool m_click;
 
     sf::RectangleShape m_shape;
     sf::Text m_text;
