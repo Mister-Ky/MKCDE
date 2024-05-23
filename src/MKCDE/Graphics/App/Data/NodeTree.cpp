@@ -1,4 +1,4 @@
-#include <MKCDE/Application/Data/NodeTree.hpp>
+#include <MKCDE/Graphics/App/Data/NodeTree.hpp>
 
 mk::NodeTree::NodeTree() = default;
 

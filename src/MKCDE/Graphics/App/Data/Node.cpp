@@ -1,4 +1,4 @@
-#include <MKCDE/Application/Data/Node.hpp>
+#include <MKCDE/Graphics/App/Data/Node.hpp>
 
 mk::Node::Node() = default;
 

@@ -1,4 +1,4 @@
-#include <MKCDE/Application/GraphicalApp.hpp>
+#include <MKCDE/Graphics/App/GraphicalApp.hpp>
 
 mk::GraphicalApp::GraphicalApp()
 {

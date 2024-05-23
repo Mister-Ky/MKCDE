@@ -4,7 +4,7 @@
 #define MK_NODE_TREE_HPP
 
 #include <memory>
-#include <MKCDE/Application/Data/Node.hpp>
+#include <MKCDE/Graphics/App/Data/Node.hpp>
 
 namespace mk
 {
