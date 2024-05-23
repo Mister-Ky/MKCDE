@@ -7,11 +7,10 @@
 
 namespace mk
 {
-class Slider : public sf::Drawable, public sf::Transformable
+class Slider : public sf::Transformable, public sf::Drawable
 {
 public:
     Slider();
-    Slider(const sf::Texture* texture);
 
     void update(const sf::RenderWindow& window, const sf::Event& event);
 private:
