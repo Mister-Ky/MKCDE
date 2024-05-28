@@ -26,3 +26,5 @@ set(SRC
 add_library(mkcde-system ${SRC})
 #target_link_libraries(mkcde-system PUBLIC sfml-system)
 target_link_libraries(mkcde-system)
+
+message("[MKCDE] mkcde-system created")
