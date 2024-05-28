@@ -3,7 +3,7 @@
 #ifndef MK_BUTTON_HPP
 #define MK_BUTTON_HPP
 
-#include <MKCDE/Graphics/Utilities/centerTextInRectangle.hpp>
+#include <MKCDE/Graphics/Utils/centerTextInRectangle.hpp>
 #include <SFML/Graphics.hpp>
 #include <string>
 

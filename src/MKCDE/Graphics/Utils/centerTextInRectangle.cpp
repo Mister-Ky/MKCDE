@@ -1,4 +1,4 @@
-#include <MKCDE/Graphics/Utilities/centerTextInRectangle.hpp>
+#include <MKCDE/Graphics/Utils/centerTextInRectangle.hpp>
 
 void mk::centerTextInRectangle(sf::RectangleShape& rectangle, sf::Text& text)
 {
