@@ -63,3 +63,13 @@ endif()
 #end headers
 
 set_target_properties(MKCDE PROPERTIES INSTALL_NAME_DIR "@rpath")
+if(NOT CMAKE_SKIP_BUILD_RPATH)
+    if (CMAKE_VERSION VERSION_LESS 3.9)
+        set_target_properties(MKCDE PROPERTIES BUILD_WITH_INSTALL_RPATH TRUE)
+    else()
+        set_target_properties(MKCDE PROPERTIES BUILD_WITH_INSTALL_NAME_DIR TRUE)
+    endif()
+endif()
+install(TARGETS MKCDE
+        FRAMEWORK DESTINATION "."
+        COMPONENT mkcde)
