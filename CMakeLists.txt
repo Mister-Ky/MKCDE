@@ -61,3 +61,5 @@ if(MKCDE_BUILD_UTILS)
                         $<TARGET_FILE_DIR:MKCDE>/Headers)
 endif()
 #end headers
+
+set_target_properties(MKCDE PROPERTIES INSTALL_NAME_DIR "@rpath")
