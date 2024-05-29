@@ -19,12 +19,20 @@ mkcde_set_option(CMAKE_BUILD_TYPE Release STRING "Choose the type of build (Debu
 
 project(MKCDE)
 
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/Config.cmake)
+
 set(CMAKE_CXX_STANDARD 17)
 
 include_directories("include/")
 
 mkcde_set_option(MKCDE_BUILD_GRAPHICS TRUE BOOL "TRUE to build MKCDE's Graphics module.")
 mkcde_set_option(MKCDE_BUILD_UTILS TRUE BOOL "TRUE to build MKCDE's Utils module.")
+
+mkcde_set_option(MKCDE_USE_STATIC_STD_LIBS FALSE BOOL "TRUE to statically link to the standard libraries, FALSE to use them as DLLs")
+
+if(BUILD_SHARED_LIBS AND MKCDE_USE_STATIC_STD_LIBS)
+    message(FATAL_ERROR "BUILD_SHARED_LIBS and MKCDE_USE_STATIC_STD_LIBS cannot be used together")
+endif()
 
 add_subdirectory(src/MKCDE)
 
@@ -44,6 +52,8 @@ set(MKCDE_SOURCES ${MKCDE_HEADERS})
 list(APPEND MKCDE_SOURCES ${CMAKE_CURRENT_BINARY_DIR}/dummy.cpp)
 
 add_library(MKCDE ${MKCDE_SOURCES})
+
+mkcde_set_stdlib(MKCDE)
 
 #headers
 add_custom_command(TARGET MKCDE POST_BUILD COMMAND cp -r
