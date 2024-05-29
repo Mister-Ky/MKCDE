@@ -50,7 +50,7 @@ file(GLOB MKCDE_HEADERS RELATIVE ${PROJECT_SOURCE_DIR} "include/MKCDE/*")
 
 add_custom_command(OUTPUT dummy.cpp
                    COMMAND ${CMAKE_COMMAND} -E copy
-                           ${CMAKE_SOURCE_DIR}/tools/dummy.cpp
+                           ${PROJECT_SOURCE_DIR}/tools/dummy.cpp
                            ${CMAKE_CURRENT_BINARY_DIR}/dummy.cpp)
 
 set(MKCDE_SOURCES ${MKCDE_HEADERS})
