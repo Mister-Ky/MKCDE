@@ -1,4 +1,8 @@
 
+include(${PROJECT_SOURCE_DIR}/cmake/Macros.cmake)
+
+set(LIBRARY_OUTPUT_PATH "${PROJECT_BINARY_DIR}/lib")
+
 #mkcde-system
 add_subdirectory(System)
 

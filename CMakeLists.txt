@@ -76,4 +76,4 @@ if(NOT CMAKE_SKIP_BUILD_RPATH)
 endif()
 install(TARGETS MKCDE
         FRAMEWORK DESTINATION "."
-        COMPONENT mkcde)
+        COMPONENT mik)

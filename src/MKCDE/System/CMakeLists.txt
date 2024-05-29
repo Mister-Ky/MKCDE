@@ -17,8 +17,10 @@ set(SRC
     ${INCROOT}/SystemInfo.hpp
 )
 
-add_library(mkcde-system ${SRC})
+mkcde_add_library(mkcde-system STATIC SOURCES ${SRC})
 set_target_properties(mkcde-system PROPERTIES
-    LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
-)
+                      DEBUG_POSTFIX -d
+                      RELEASE_POSTFIX ""
+                      MINSIZEREL_POSTFIX ""
+                      RELWITHDEBINFO_POSTFIX "")
 #target_link_libraries(mkcde-system PUBLIC sfml-system)

@@ -21,8 +21,5 @@ set(SRC
     ${INCROOT}/App/Data/NodeTree.hpp
 )
 
-add_library(mkcde-graphics ${SRC})
-set_target_properties(mkcde-graphics PROPERTIES
-    LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
-)
-target_link_libraries(mkcde-graphics PUBLIC mkcde-system sfml-system sfml-window sfml-graphics ImGui-SFML)
+mkcde_add_library(mkcde-graphics SOURCES ${SRC})
+target_link_libraries(mkcde-graphics PUBLIC mkcde-system sfml-graphics ImGui-SFML::ImGui-SFML)
