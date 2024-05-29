@@ -45,8 +45,11 @@ file(GLOB MKCDE_HEADERS RELATIVE ${PROJECT_SOURCE_DIR} "include/MKCDE/*")
 # then we can run a post script to copy the remaining headers
 # we need a dummy file in order to compile the framework
 
+#add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/dummy.cpp
+#                       COMMAND touch ${CMAKE_CURRENT_BINARY_DIR}/dummy.cpp)
+
 add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/dummy.cpp
-                       COMMAND touch ${CMAKE_CURRENT_BINARY_DIR}/dummy.cpp)
+                   COMMAND echo. > ${CMAKE_CURRENT_BINARY_DIR}/dummy.cpp)
 
 set(MKCDE_SOURCES ${MKCDE_HEADERS})
 list(APPEND MKCDE_SOURCES ${CMAKE_CURRENT_BINARY_DIR}/dummy.cpp)
