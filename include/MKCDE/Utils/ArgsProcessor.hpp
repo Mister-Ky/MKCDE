@@ -12,6 +12,8 @@
 
 namespace mk
 {
+typedef const std::vector<std::string> Args;
+
 class ArgsProcessor
 {
 public:
