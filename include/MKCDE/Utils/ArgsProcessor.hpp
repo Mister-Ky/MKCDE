@@ -12,7 +12,7 @@
 
 namespace mk
 {
-typedef const std::vector<std::string> Args;
+typedef std::vector<std::string> Args;
 
 class ArgsProcessor
 {
