@@ -17,7 +17,11 @@ endmacro()
 
 mkcde_set_option(CMAKE_BUILD_TYPE Release STRING "Choose the type of build (Debug or Release)")
 
-project(MKCDE VERSION 1.0.0 LANGUAGES CXX)
+project(MKCDE)
+
+set(CMAKE_CXX_STANDARD 17)
+
+include_directories("include/")
 
 mkcde_set_option(MKCDE_BUILD_GRAPHICS TRUE BOOL "TRUE to build MKCDE's Graphics module.")
 mkcde_set_option(MKCDE_BUILD_UTILS TRUE BOOL "TRUE to build MKCDE's Utils module.")
