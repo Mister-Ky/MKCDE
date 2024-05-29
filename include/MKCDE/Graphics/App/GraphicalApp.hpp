@@ -40,7 +40,7 @@ protected:
 
 	bool initializationSuccessful;
 
-	std::unique_ptr<sf::RenderWindow> window;
+	sf::RenderWindow window;
 private:
 	int m_frameRate;
 };

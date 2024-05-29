@@ -17,8 +17,8 @@ byte mk::GraphicalApp::run()
 { 
 	if (initializationSuccessful)
 	{
-		window->setFramerateLimit(get_frameRate());
-		while (window->isOpen())
+		window.setFramerateLimit(get_frameRate());
+		while (window.isOpen())
 		{
 			byte update_return = update();
 			if (update_return != MK_APP_CONTINUE_SUCCESSFULLY)
@@ -41,7 +41,7 @@ void mk::GraphicalApp::shutdown() {}
 void mk::GraphicalApp::set_frameRate(const int new_frameRate)
 {
 	m_frameRate = new_frameRate;
-	window->setFramerateLimit(m_frameRate);
+	window.setFramerateLimit(m_frameRate);
 }
 int mk::GraphicalApp::get_frameRate() const { return m_frameRate; }
 mk::NodeTree* mk::GraphicalApp::get_tree() { return &tree; }
