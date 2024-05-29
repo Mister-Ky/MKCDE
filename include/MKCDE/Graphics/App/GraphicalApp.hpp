@@ -6,7 +6,6 @@
 // The MK_APP_CONTINUE_SUCCESSFULLY constant indicates the successful continuation of the application
 #define MK_APP_CONTINUE_SUCCESSFULLY 61
 
-#include <memory>
 #include <MKCDE/Graphics/App/Data/NodeTree.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/System/NonCopyable.hpp>
