@@ -48,8 +48,10 @@ file(GLOB MKCDE_HEADERS RELATIVE ${PROJECT_SOURCE_DIR} "include/MKCDE/*")
 #add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/dummy.cpp
 #                       COMMAND touch ${CMAKE_CURRENT_BINARY_DIR}/dummy.cpp)
 
-add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/dummy.cpp
-                   COMMAND echo. 2> ${CMAKE_CURRENT_BINARY_DIR}/dummy.cpp)
+add_custom_command(OUTPUT dummy.cpp
+                   COMMAND ${CMAKE_COMMAND} -E copy
+                           ${CMAKE_SOURCE_DIR}/tools/dummy.cpp
+                           ${CMAKE_CURRENT_BINARY_DIR}/dummy.cpp)
 
 set(MKCDE_SOURCES ${MKCDE_HEADERS})
 list(APPEND MKCDE_SOURCES ${CMAKE_CURRENT_BINARY_DIR}/dummy.cpp)
