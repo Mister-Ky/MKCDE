@@ -60,27 +60,6 @@ add_library(MKCDE ${MKCDE_SOURCES})
 
 mkcde_set_stdlib(MKCDE)
 
-#headers
-add_custom_command(TARGET MKCDE POST_BUILD COMMAND cp -r
-                       ${PROJECT_SOURCE_DIR}/include/MKCDE/System.hpp
-                       ${PROJECT_SOURCE_DIR}/include/MKCDE/System
-                       $<TARGET_FILE_DIR:MKCDE>/Headers)
-
-if(MKCDE_BUILD_GRAPHICS)
-    add_custom_command(TARGET MKCDE POST_BUILD COMMAND cp -r
-                        ${PROJECT_SOURCE_DIR}/include/MKCDE/Graphics.hpp
-                        ${PROJECT_SOURCE_DIR}/include/MKCDE/Graphics
-                        $<TARGET_FILE_DIR:MKCDE>/Headers)
-endif()
-
-if(MKCDE_BUILD_UTILS)
-    add_custom_command(TARGET MKCDE POST_BUILD COMMAND cp -r
-                        ${PROJECT_SOURCE_DIR}/include/MKCDE/Utils.hpp
-                        ${PROJECT_SOURCE_DIR}/include/MKCDE/Utils
-                        $<TARGET_FILE_DIR:MKCDE>/Headers)
-endif()
-#end headers
-
 set_target_properties(MKCDE PROPERTIES INSTALL_NAME_DIR "@rpath")
 if(NOT CMAKE_SKIP_BUILD_RPATH)
     if (CMAKE_VERSION VERSION_LESS 3.9)
