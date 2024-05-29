@@ -34,6 +34,37 @@ if(BUILD_SHARED_LIBS AND MKCDE_USE_STATIC_STD_LIBS)
     message(FATAL_ERROR "BUILD_SHARED_LIBS and MKCDE_USE_STATIC_STD_LIBS cannot be used together")
 endif()
 
+if(MKCDE_COMPILER_MSVC)
+    if(CMAKE_VERSION VERSION_LESS 3.1)
+        mkcde_set_option(MKCDE_GENERATE_PDB FALSE BOOL "True to generate PDB debug symbols, FALSE otherwise. Requires CMake 3.1.")
+        if(MKCDE_GENERATE_PDB)
+            message(FATAL_ERROR "Generation of PDB files (MKCDE_GENERATE_PDB) requires at least CMake 3.1.0")
+        endif()
+    else()
+        mkcde_set_option(MKCDE_GENERATE_PDB TRUE BOOL "True to generate PDB debug symbols, FALSE otherwise. Requires CMake 3.1.")
+    endif()
+
+    add_definitions(-D_CRT_SECURE_NO_DEPRECATE -D_SCL_SECURE_NO_WARNINGS)
+endif()
+
+if(MKCDE_OS_WINDOWS)
+    mkcde_set_option(MKCDE_USE_STATIC_STD_LIBS FALSE BOOL "TRUE to statically link to the standard libraries, FALSE to use them as DLLs")
+
+    if(BUILD_SHARED_LIBS AND MKCDE_USE_STATIC_STD_LIBS)
+        message(FATAL_ERROR "BUILD_SHARED_LIBS and MKCDE_USE_STATIC_STD_LIBS cannot be used together")
+    endif()
+
+    if((MKCDE_COMPILER_MSVC OR (MKCDE_COMPILER_CLANG AND NOT MINGW)) AND MKCDE_USE_STATIC_STD_LIBS)
+        foreach(flag
+                CMAKE_CXX_FLAGS CMAKE_CXX_FLAGS_DEBUG CMAKE_CXX_FLAGS_RELEASE
+                CMAKE_CXX_FLAGS_MINSIZEREL CMAKE_CXX_FLAGS_RELWITHDEBINFO)
+            if(${flag} MATCHES "/MD")
+                string(REGEX REPLACE "/MD" "/MT" ${flag} "${${flag}}")
+            endif()
+        endforeach()
+    endif()
+endif()
+
 add_subdirectory(src/MKCDE)
 
 file(GLOB MKCDE_HEADERS RELATIVE ${PROJECT_SOURCE_DIR} "include/MKCDE/*")

@@ -17,10 +17,5 @@ set(SRC
     ${INCROOT}/SystemInfo.hpp
 )
 
-mkcde_add_library(mkcde-system STATIC SOURCES ${SRC})
-set_target_properties(mkcde-system PROPERTIES
-                      DEBUG_POSTFIX -d
-                      RELEASE_POSTFIX ""
-                      MINSIZEREL_POSTFIX ""
-                      RELWITHDEBINFO_POSTFIX "")
+mkcde_add_library(mkcde-system SOURCES ${SRC})
 #target_link_libraries(mkcde-system PUBLIC sfml-system)
