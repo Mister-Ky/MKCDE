@@ -17,13 +17,8 @@ set(SRC
     ${INCROOT}/SystemInfo.hpp
 )
 
-#include(FetchContent)
-#FetchContent_Declare(SFML
-#    GIT_REPOSITORY https://github.com/SFML/SFML.git
-#    GIT_TAG 2.6.x)
-#FetchContent_MakeAvailable(SFML)
-
 add_library(mkcde-system ${SRC})
+set_target_properties(mkcde-system PROPERTIES
+    LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+)
 #target_link_libraries(mkcde-system PUBLIC sfml-system)
-
-message("[MKCDE] mkcde-system created")
