@@ -53,7 +53,6 @@ macro(mkcde_add_library target)
     # create the target
     if (THIS_STATIC)
         add_library(${target} STATIC ${THIS_SOURCES})
-        message("THIS STATIC!!!!!!!")
     else()
         add_library(${target} ${THIS_SOURCES})
     endif()
