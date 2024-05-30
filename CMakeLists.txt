@@ -21,17 +21,35 @@ project(MKCDE)
 
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/Config.cmake)
 
+set(VERSION_MAJOR 0)
+set(VERSION_MINOR 5)
+set(VERSION_PATCH 0)
+
+if(NOT (MKCDE_OS_IOS OR MKCDE_OS_ANDROID))
+    mkcde_set_option(BUILD_SHARED_LIBS TRUE BOOL "TRUE to build MKCDE as shared libraries, FALSE to build it as static libraries")
+else()
+    if(MKCDE_OS_IOS)
+        set(BUILD_SHARED_LIBS FALSE)
+    elseif(MKCDE_OS_ANDROID)
+        set(BUILD_SHARED_LIBS TRUE)
+    endif()
+endif()
+
 set(CMAKE_CXX_STANDARD 17)
 
-include_directories("include/")
+#include_directories("include/")
 
 mkcde_set_option(MKCDE_BUILD_GRAPHICS TRUE BOOL "TRUE to build MKCDE's Graphics module.")
 mkcde_set_option(MKCDE_BUILD_UTILS TRUE BOOL "TRUE to build MKCDE's Utils module.")
 
-mkcde_set_option(MKCDE_USE_STATIC_STD_LIBS FALSE BOOL "TRUE to statically link to the standard libraries, FALSE to use them as DLLs")
-
-if(BUILD_SHARED_LIBS AND MKCDE_USE_STATIC_STD_LIBS)
-    message(FATAL_ERROR "BUILD_SHARED_LIBS and MKCDE_USE_STATIC_STD_LIBS cannot be used together")
+if(MKCDE_OS_WINDOWS OR MKCDE_OS_IOS)
+    set(DEFAULT_INSTALL_MISC_DIR .)
+elseif(MKCDE_OS_LINUX OR MKCDE_OS_FREEBSD OR MKCDE_OS_OPENBSD OR MKCDE_OS_NETBSD)
+    set(DEFAULT_INSTALL_MISC_DIR share/MKCDE)
+elseif(MKCDE_OS_MACOSX)
+    set(DEFAULT_INSTALL_MISC_DIR /usr/local/share/MKCDE)
+elseif(MKCDE_OS_ANDROID)
+    set(DEFAULT_INSTALL_MISC_DIR ${CMAKE_ANDROID_NDK}/sources/third_party/mkcde)
 endif()
 
 if(MKCDE_COMPILER_MSVC)
@@ -47,23 +65,8 @@ if(MKCDE_COMPILER_MSVC)
     add_definitions(-D_CRT_SECURE_NO_DEPRECATE -D_SCL_SECURE_NO_WARNINGS)
 endif()
 
-if(MKCDE_OS_WINDOWS)
-    mkcde_set_option(MKCDE_USE_STATIC_STD_LIBS FALSE BOOL "TRUE to statically link to the standard libraries, FALSE to use them as DLLs")
-
-    if(BUILD_SHARED_LIBS AND MKCDE_USE_STATIC_STD_LIBS)
-        message(FATAL_ERROR "BUILD_SHARED_LIBS and MKCDE_USE_STATIC_STD_LIBS cannot be used together")
-    endif()
-
-    if((MKCDE_COMPILER_MSVC OR (MKCDE_COMPILER_CLANG AND NOT MINGW)) AND MKCDE_USE_STATIC_STD_LIBS)
-        foreach(flag
-                CMAKE_CXX_FLAGS CMAKE_CXX_FLAGS_DEBUG CMAKE_CXX_FLAGS_RELEASE
-                CMAKE_CXX_FLAGS_MINSIZEREL CMAKE_CXX_FLAGS_RELWITHDEBINFO)
-            if(${flag} MATCHES "/MD")
-                string(REGEX REPLACE "/MD" "/MT" ${flag} "${${flag}}")
-            endif()
-        endforeach()
-    endif()
-endif()
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+set_property(GLOBAL PROPERTY PREDEFINED_TARGETS_FOLDER "CMake")
 
 add_subdirectory(src/MKCDE)
 

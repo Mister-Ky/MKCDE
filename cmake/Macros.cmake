@@ -31,7 +31,7 @@ function(mkcde_set_common_ios_properties target)
     if (target_type STREQUAL "EXECUTABLE")
         set_target_properties(${target} PROPERTIES
             MACOSX_BUNDLE TRUE # Bare executables are not usable on iOS, only bundle applications
-            #MACOSX_BUNDLE_GUI_IDENTIFIER "org.sfml-dev.${target}" # If missing, trying to launch an example in simulator will make Xcode < 9.3 crash
+            MACOSX_BUNDLE_GUI_IDENTIFIER "org.mister-mir.${target}" # If missing, trying to launch an example in simulator will make Xcode < 9.3 crash
             MACOSX_BUNDLE_BUNDLE_NAME "${target}"
             MACOSX_BUNDLE_LONG_VERSION_STRING "${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}"
         )
