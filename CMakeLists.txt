@@ -21,9 +21,9 @@ endif()
 
 mkcde_set_option(CMAKE_BUILD_TYPE Release STRING "Choose the type of build (Debug or Release)")
 
-set(LIBRARY_OUTPUT_PATH "${PROJECT_BINARY_DIR}/lib")
-
 project(MKCDE)
+
+set(LIBRARY_OUTPUT_PATH "${PROJECT_BINARY_DIR}/lib")
 
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/Config.cmake)
 
