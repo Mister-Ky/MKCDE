@@ -3,13 +3,14 @@
 #ifndef MK_BUTTON_HPP
 #define MK_BUTTON_HPP
 
+#include <MKCDE/Graphics/Export.hpp>
 #include <MKCDE/Graphics/Utils/centerTextInRectangle.hpp>
 #include <SFML/Graphics.hpp>
 #include <string>
 
 namespace mk
 {
-class Button : public sf::Transformable, public sf::Drawable
+class MKCDE_GRAPHICS_API Button : public sf::Transformable, public sf::Drawable
 {
 public:
     Button();

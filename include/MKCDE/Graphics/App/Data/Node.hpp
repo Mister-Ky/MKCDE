@@ -5,17 +5,18 @@
 
 #include <map>
 #include <memory>
+#include <MKCDE/Graphics/Export.hpp>
 
 namespace mk
 {
-typedef unsigned short NodeID;
-typedef unsigned short NodeLevel;
-
 class NodeTree;
 
-class Node
+class MKCDE_GRAPHICS_API Node
 {
 public:
+    typedef unsigned short NodeID;
+    typedef unsigned short NodeLevel;
+
     Node();
 
     Node(const NodeID id);

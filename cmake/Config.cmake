@@ -1,6 +1,7 @@
 
 # thanks to sfml for the cmake sample code for the Config.cmake modular library
 # https://github.com/SFML/SFML/blob/2.6.x/cmake/Config.cmake
+# I changed their code for my library to avoid confusion in the names of objects
 
 # detect the OS
 if(${CMAKE_SYSTEM_NAME} STREQUAL "Windows")

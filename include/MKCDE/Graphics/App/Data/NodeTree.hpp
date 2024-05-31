@@ -1,14 +1,15 @@
 #pragma once
 
-#ifndef MK_NODE_TREE_HPP
-#define MK_NODE_TREE_HPP
+#ifndef MK_NODETREE_HPP
+#define MK_NODETREE_HPP
 
 #include <memory>
 #include <MKCDE/Graphics/App/Data/Node.hpp>
+#include <MKCDE/Graphics/Export.hpp>
 
 namespace mk
 {
-class NodeTree
+class MKCDE_GRAPHICS_API NodeTree
 {
 public:
 	NodeTree();

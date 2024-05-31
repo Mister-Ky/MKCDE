@@ -3,11 +3,12 @@
 #ifndef MK_TRIANGLE_HPP
 #define MK_TRIANGLE_HPP
 
+#include <MKCDE/Graphics/Export.hpp>
 #include <SFML/Graphics/ConvexShape.hpp>
 
 namespace mk
 {
-class Triangle : public sf::ConvexShape
+class MKCDE_GRAPHICS_API Triangle : public sf::ConvexShape
 {
 public:
     Triangle();

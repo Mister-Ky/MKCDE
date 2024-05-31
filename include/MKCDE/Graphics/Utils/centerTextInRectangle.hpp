@@ -1,13 +1,14 @@
 #pragma once
 
-#ifndef MK_CENTER_TEXT_IN_RECTANGLE_HPP
-#define MK_CENTER_TEXT_IN_RECTANGLE_HPP
+#ifndef MK_CENTERTEXTINRECTANGLE_HPP
+#define MK_CENTERTEXTINRECTANGLE_HPP
 
+#include <MKCDE/Graphics/Export.hpp>
 #include <SFML/Graphics.hpp>
 
 namespace mk
 {
-void centerTextInRectangle(sf::RectangleShape& rectangle, sf::Text& text);
+MKCDE_GRAPHICS_API void centerTextInRectangle(sf::RectangleShape& rectangle, sf::Text& text);
 }
 
 #endif

@@ -1,6 +1,7 @@
 
 # thanks to sfml for the cmake sample code for the Marcos.cmake modular library
 # https://github.com/SFML/SFML/blob/2.6.x/cmake/Macros.cmake
+# I changed their code for my library to avoid confusion in the names of objects
 
 macro (mkcde_set_xcode_property TARGET XCODE_PROPERTY XCODE_VALUE)
     set_property (TARGET ${TARGET} PROPERTY XCODE_ATTRIBUTE_${XCODE_PROPERTY} ${XCODE_VALUE})

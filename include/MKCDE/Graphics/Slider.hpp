@@ -3,11 +3,12 @@
 #ifndef MK_SLIDER_HPP
 #define MK_SLIDER_HPP
 
+#include <MKCDE/Graphics/Export.hpp>
 #include <SFML/Graphics.hpp>
 
 namespace mk
 {
-class Slider : public sf::Transformable, public sf::Drawable
+class MKCDE_GRAPHICS_API Slider : public sf::Transformable, public sf::Drawable
 {
 public:
     Slider();

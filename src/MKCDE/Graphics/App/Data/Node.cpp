@@ -33,7 +33,7 @@ void mk::Node::remove_child(const NodeLevel level)
     m_children.erase(level);
 }
 
-mk::NodeID mk::Node::get_id() const
+mk::Node::NodeID mk::Node::get_id() const
 {
     return m_id;
 }

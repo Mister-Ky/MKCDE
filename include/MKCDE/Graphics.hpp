@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef MK_GRAPHICS_HPP
-#define MK_GRAPHICS_HPP
+#ifndef MKCDE_GRAPHICS_HPP
+#define MKCDE_GRAPHICS_HPP
 
 #include <imgui.h>
 #include <imgui-sfml.h>

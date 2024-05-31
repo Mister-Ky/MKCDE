@@ -1,19 +1,18 @@
 #pragma once
 
-#ifndef MK_ARGS_PROCESSOR_HPP
-#define MK_ARGS_PROCESSOR_HPP
+#ifndef MK_ARGSPROCESSOR_HPP
+#define MK_ARGSPROCESSOR_HPP
 
-#include <string>
-#include <map>
-#include <vector>
 #include <functional>
+#include <map>
+#include <MKCDE/Utils/Export.hpp>
+#include <string>
 #include <tuple>
+#include <vector>
 
 namespace mk
 {
-typedef std::vector<std::string> Args;
-
-class ArgsProcessor
+class MKCDE_UTILS_API ArgsProcessor
 {
 public:
     ArgsProcessor();
@@ -25,6 +24,8 @@ public:
     void executeCommand(const std::string& command, const Args& args);
 
     void parse(int argc, char* argv[]);
+
+    typedef std::vector<std::string> Args;
 private:
     std::map<std::string, std::tuple<std::function<void(const Args&)>, int, int>> m_commands;
     char m_commandSymbol;

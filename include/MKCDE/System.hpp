@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef MK_SYSTEM_HPP
-#define MK_SYSTEM_HPP
+#ifndef MKCDE_SYSTEM_HPP
+#define MKCDE_SYSTEM_HPP
 
 //#include <SFML/System.hpp>
 #include <MKCDE/System/EnvironmentVariables.hpp>
