@@ -19,6 +19,8 @@ set(SRC
     ${INCROOT}/App/Data/Node.hpp
     ${SRCROOT}/App/Data/NodeTree.cpp
     ${INCROOT}/App/Data/NodeTree.hpp
+    ${SRCROOT}/App/Data/Object.cpp
+    ${INCROOT}/App/Data/Object.hpp
 )
 
 mkcde_add_library(mkcde-graphics SOURCES ${SRC})
