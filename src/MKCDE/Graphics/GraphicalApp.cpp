@@ -1,4 +1,4 @@
-#include <MKCDE/Graphics/App/GraphicalApp.hpp>
+#include <MKCDE/Graphics/GraphicalApp.hpp>
 
 mk::GraphicalApp::GraphicalApp()
 {
@@ -44,4 +44,3 @@ void mk::GraphicalApp::set_frameRate(const int new_frameRate)
 	window.setFramerateLimit(m_frameRate);
 }
 int mk::GraphicalApp::get_frameRate() const { return m_frameRate; }
-mk::NodeTree* mk::GraphicalApp::get_tree() { return &tree; }

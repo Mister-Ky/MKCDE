@@ -11,16 +11,8 @@ set(SRC
     ${INCROOT}/Triangle.hpp
     ${SRCROOT}/Utils/centerTextInRectangle.cpp
     ${INCROOT}/Utils/centerTextInRectangle.hpp
-    ${SRCROOT}/App/GraphicalApp.cpp
-    ${INCROOT}/App/GraphicalApp.hpp
-    ${SRCROOT}/App/Data/MKRF.cpp
-    ${INCROOT}/App/Data/MKRF.hpp
-    ${SRCROOT}/App/Data/Node.cpp
-    ${INCROOT}/App/Data/Node.hpp
-    ${SRCROOT}/App/Data/NodeTree.cpp
-    ${INCROOT}/App/Data/NodeTree.hpp
-    ${SRCROOT}/App/Data/Object.cpp
-    ${INCROOT}/App/Data/Object.hpp
+    ${SRCROOT}/GraphicalApp.cpp
+    ${INCROOT}/GraphicalApp.hpp
 )
 
 mkcde_add_library(mkcde-graphics SOURCES ${SRC})
