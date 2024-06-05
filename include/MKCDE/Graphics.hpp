@@ -9,8 +9,7 @@
 #include <MKCDE/Graphics/Slider.hpp>
 #include <MKCDE/Graphics/Triangle.hpp>
 #include <MKCDE/Graphics/Utils/centerTextInRectangle.hpp>
+#include <MKCDE/System.hpp>
 #include <SFML/Graphics.hpp>
-#include <SFML/System.hpp>
-#include <SFML/Window.hpp>
 
 #endif
