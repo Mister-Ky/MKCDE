@@ -5,11 +5,11 @@
 
 #include <map>
 #include <memory>
-#include <MKCDE/System/Export.hpp>
+#include <MKCDE/App/Export.hpp>
 
 namespace mk
 {
-class MKCDE_SYSTEM_API Node
+class MKCDE_APP_API Node
 {
 
 };

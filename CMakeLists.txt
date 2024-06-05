@@ -47,6 +47,12 @@ set(CMAKE_CXX_STANDARD 17)
 
 mkcde_set_option(MKCDE_BUILD_GRAPHICS TRUE BOOL "TRUE to build MKCDE's Graphics module.")
 mkcde_set_option(MKCDE_BUILD_UTILS TRUE BOOL "TRUE to build MKCDE's Utils module.")
+mkcde_set_option(MKCDE_BUILD_APP TRUE BOOL "TRUE to build MKCDE's App module. Uses a Graphics module.")
+
+if(MKCDE_BUILD_APP AND NOT MKCDE_BUILD_GRAPHICS)
+    message(WARNING "MKCDE : Forcibly turn on the Graphics module for the App module to work.")
+    set(MKCDE_BUILD_GRAPHICS TRUE)
+endif()
 
 if(MKCDE_OS_WINDOWS OR MKCDE_OS_IOS)
     set(DEFAULT_INSTALL_MISC_DIR .)

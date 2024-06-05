@@ -6,14 +6,13 @@
 // The MK_APP_CONTINUE_SUCCESSFULLY constant indicates the successful continuation of the application
 #define MK_APP_CONTINUE_SUCCESSFULLY 61
 
-#include <MKCDE/Graphics/Export.hpp>
-#include <SFML/Graphics.hpp>
-#include <SFML/System/NonCopyable.hpp>
+#include <MKCDE/App/Export.hpp>
+#include <MKCDE/Graphics.hpp>
 #include <Windows.h>
 
 namespace mk
 {
-class MKCDE_GRAPHICS_API GraphicalApp : public sf::NonCopyable
+class MKCDE_APP_API GraphicalApp : public sf::NonCopyable
 {
 public:
 	//enum AppMode { GRAPHICS_MODE = 1, CONSOLE_MODE = 2 };

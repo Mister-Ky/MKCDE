@@ -7,11 +7,16 @@ include(${PROJECT_SOURCE_DIR}/cmake/Macros.cmake)
 add_subdirectory(System)
 
 #mkcde-graphics
-if(MKCDE_BUILD_GRAPHICS)
+if(MKCDE_BUILD_GRAPHICS OR MKCDE_BUILD_APP)
     add_subdirectory(Graphics)
 endif()
 
-#mkcde-utilities
+#mkcde-utils
 if(MKCDE_BUILD_UTILS)
     add_subdirectory(Utils)
+endif()
+
+#mkcde-app
+if(MKCDE_BUILD_APP)
+    add_subdirectory(App)
 endif()

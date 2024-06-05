@@ -17,11 +17,7 @@ set(SRC
     ${INCROOT}/SystemInfo.hpp
     ${SRCROOT}/Data/MKRF.cpp
     ${INCROOT}/Data/MKRF.hpp
-    ${SRCROOT}/Data/Node.cpp
-    ${INCROOT}/Data/Node.hpp
-    ${SRCROOT}/Data/Object.cpp
-    ${INCROOT}/Data/Object.hpp
 )
 
 mkcde_add_library(mkcde-system SOURCES ${SRC})
-#target_link_libraries(mkcde-system PUBLIC sfml-system)
+target_link_libraries(mkcde-system PUBLIC sfml-system)

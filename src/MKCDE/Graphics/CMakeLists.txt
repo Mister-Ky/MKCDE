@@ -11,8 +11,6 @@ set(SRC
     ${INCROOT}/Triangle.hpp
     ${SRCROOT}/Utils/centerTextInRectangle.cpp
     ${INCROOT}/Utils/centerTextInRectangle.hpp
-    ${SRCROOT}/GraphicalApp.cpp
-    ${INCROOT}/GraphicalApp.hpp
 )
 
 mkcde_add_library(mkcde-graphics SOURCES ${SRC})

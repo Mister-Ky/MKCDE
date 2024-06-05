@@ -6,7 +6,6 @@
 #include <imgui.h>
 #include <imgui-sfml.h>
 #include <MKCDE/Graphics/Button.hpp>
-#include <MKCDE/Graphics/GraphicalApp.hpp>
 #include <MKCDE/Graphics/Slider.hpp>
 #include <MKCDE/Graphics/Triangle.hpp>
 #include <MKCDE/Graphics/Utils/centerTextInRectangle.hpp>
