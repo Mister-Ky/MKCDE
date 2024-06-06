@@ -46,6 +46,7 @@ set(CMAKE_CXX_STANDARD 17)
 #include_directories("include/")
 
 mkcde_set_option(MKCDE_BUILD_GRAPHICS TRUE BOOL "TRUE to build MKCDE's Graphics module.")
+mkcde_set_option(MKCDE_BUILD_DATA TRUE BOOL "TRUE to build MKCDE's Data module.")
 mkcde_set_option(MKCDE_BUILD_UTILS TRUE BOOL "TRUE to build MKCDE's Utils module.")
 mkcde_set_option(MKCDE_BUILD_APP TRUE BOOL "TRUE to build MKCDE's App module. Uses a Graphics module.")
 

@@ -15,8 +15,6 @@ set(SRC
     ${INCROOT}/FileManager.hpp
     ${SRCROOT}/SystemInfo.cpp
     ${INCROOT}/SystemInfo.hpp
-    ${SRCROOT}/Data/MKRF.cpp
-    ${INCROOT}/Data/MKRF.hpp
 )
 
 mkcde_add_library(mkcde-system SOURCES ${SRC})

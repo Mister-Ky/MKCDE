@@ -11,6 +11,11 @@ if(MKCDE_BUILD_GRAPHICS OR MKCDE_BUILD_APP)
     add_subdirectory(Graphics)
 endif()
 
+#mkcde-data
+if(MKCDE_BUILD_DATA)
+    add_subdirectory(Data)
+endif()
+
 #mkcde-utils
 if(MKCDE_BUILD_UTILS)
     add_subdirectory(Utils)

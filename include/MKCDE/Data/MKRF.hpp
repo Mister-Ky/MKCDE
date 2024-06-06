@@ -37,26 +37,26 @@
 
 #include <fstream>
 #include <vector>
-#include <MKCDE/System/Export.hpp>
+#include <MKCDE/Data/Export.hpp>
 
 #ifndef MK_MKRF_HPP
 #define MK_MKRF_HPP
 
 namespace mk
 {
-struct MKCDE_SYSTEM_API Resource
+struct MKCDE_DATA_API Resource
 {
 
 };
 
-struct MKCDE_SYSTEM_API MKRF
+struct MKCDE_DATA_API MKRF
 {
 
 };
 
-MKCDE_SYSTEM_API void readMKRF(const std::string& filename, MKRF& mkrf);
+MKCDE_DATA_API void readMKRF(const std::string& filename, MKRF& mkrf);
 
-MKCDE_SYSTEM_API void writeMKRF(const std::string& filename, const MKRF& mkrf);
+MKCDE_DATA_API void writeMKRF(const std::string& filename, const MKRF& mkrf);
 }
 
 #endif
