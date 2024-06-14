@@ -45,8 +45,8 @@ set(CMAKE_CXX_STANDARD 17)
 
 #include_directories("include/")
 
-mkcde_set_option(MKCDE_ENABLE_IMGUI_SFML "Enable ImGui-SFML library" OFF)
-mkcde_set_option(MKCDE_ENABLE_TGUI "Enable TGUI library" OFF)
+mkcde_set_option(MKCDE_ENABLE_IMGUI_SFML FALSE BOOL "Enable ImGui-SFML library.")
+mkcde_set_option(MKCDE_ENABLE_TGUI FALSE BOOL "Enable TGUI library.")
 
 mkcde_set_option(MKCDE_BUILD_GRAPHICS TRUE BOOL "TRUE to build MKCDE's Graphics module.")
 mkcde_set_option(MKCDE_BUILD_DATA TRUE BOOL "TRUE to build MKCDE's Data module.")
