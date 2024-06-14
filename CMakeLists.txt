@@ -60,10 +60,12 @@ endif()
 
 #for mkcde-graphics
 if(MKCDE_ENABLE_IMGUI_SFML)
-    add_compile_definitions(MKCDE_ENABLE_IMGUI_SFML)
+    #add_compile_definitions(MKCDE_ENABLE_IMGUI_SFML)
+    add_definitions(-DMKCDE_ENABLE_IMGUI_SFML)
 endif()
 if(MKCDE_ENABLE_TGUI)
-    add_compile_definitions(MKCDE_ENABLE_TGUI)
+    #add_compile_definitions(MKCDE_ENABLE_TGUI)
+    add_definitions(-DMKCDE_ENABLE_TGUI)
 endif()
 
 if(MKCDE_OS_WINDOWS OR MKCDE_OS_IOS)
