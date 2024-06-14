@@ -14,4 +14,12 @@ set(SRC
 )
 
 mkcde_add_library(mkcde-graphics SOURCES ${SRC})
-target_link_libraries(mkcde-graphics PUBLIC mkcde-system sfml-graphics ImGui-SFML::ImGui-SFML)
+target_link_libraries(mkcde-graphics PUBLIC mkcde-system sfml-graphics)
+
+if(MKCDE_ENABLE_IMGUI_SFML)
+    target_link_libraries(mkcde-graphics PUBLIC ImGui-SFML::ImGui-SFML)
+endif()
+
+if(MKCDE_ENABLE_TGUI)
+    target_link_libraries(mkcde-graphics PUBLIC TGUI::TGUI)
+endif()
