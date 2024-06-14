@@ -18,10 +18,8 @@ target_link_libraries(mkcde-graphics PUBLIC mkcde-system sfml-graphics)
 
 if(MKCDE_ENABLE_IMGUI_SFML)
     target_link_libraries(mkcde-graphics PUBLIC ImGui-SFML::ImGui-SFML)
-    add_compile_definitions(MKCDE_ENABLE_IMGUI_SFML)
 endif()
 
 if(MKCDE_ENABLE_TGUI)
     target_link_libraries(mkcde-graphics PUBLIC TGUI::TGUI)
-    add_compile_definitions(MKCDE_ENABLE_TGUI)
 endif()

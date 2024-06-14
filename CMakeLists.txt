@@ -19,9 +19,9 @@ if (NOT CMAKE_VERSION VERSION_LESS 3.9)
     cmake_policy(SET CMP0068 NEW)
 endif()
 
-mkcde_set_option(CMAKE_BUILD_TYPE Release STRING "Choose the type of build (Debug or Release)")
-
 project(MKCDE)
+
+mkcde_set_option(CMAKE_BUILD_TYPE Release STRING "Choose the type of build (Debug or Release)")
 
 set(LIBRARY_OUTPUT_PATH "${PROJECT_BINARY_DIR}/lib")
 
@@ -45,8 +45,8 @@ set(CMAKE_CXX_STANDARD 17)
 
 #include_directories("include/")
 
-mkcde_set_option(MKCDE_ENABLE_IMGUI_SFML FALSE BOOL "Enable ImGui-SFML library.")
-mkcde_set_option(MKCDE_ENABLE_TGUI FALSE BOOL "Enable TGUI library.")
+option(MKCDE_ENABLE_IMGUI_SFML "Enable ImGui-SFML library." OFF)
+option(MKCDE_ENABLE_TGUI "Enable TGUI library." OFF)
 
 mkcde_set_option(MKCDE_BUILD_GRAPHICS TRUE BOOL "TRUE to build MKCDE's Graphics module.")
 mkcde_set_option(MKCDE_BUILD_DATA TRUE BOOL "TRUE to build MKCDE's Data module.")
@@ -56,6 +56,14 @@ mkcde_set_option(MKCDE_BUILD_APP TRUE BOOL "TRUE to build MKCDE's App module. Us
 if(MKCDE_BUILD_APP AND NOT MKCDE_BUILD_GRAPHICS)
     message(WARNING "MKCDE : Forcibly turn on the Graphics module for the App module to work.")
     set(MKCDE_BUILD_GRAPHICS TRUE)
+endif()
+
+#for mkcde-graphics
+if(MKCDE_ENABLE_IMGUI_SFML)
+    add_compile_definitions(MKCDE_ENABLE_IMGUI_SFML)
+endif()
+if(MKCDE_ENABLE_TGUI)
+    add_compile_definitions(MKCDE_ENABLE_TGUI)
 endif()
 
 if(MKCDE_OS_WINDOWS OR MKCDE_OS_IOS)
