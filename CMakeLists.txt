@@ -58,14 +58,6 @@ if(MKCDE_BUILD_APP AND NOT MKCDE_BUILD_GRAPHICS)
     set(MKCDE_BUILD_GRAPHICS TRUE)
 endif()
 
-#for mkcde-graphics
-if(MKCDE_ENABLE_IMGUI_SFML)
-    target_compile_definitions(MKCDE PUBLIC MKCDE_ENABLE_IMGUI_SFML)
-endif()
-if(MKCDE_ENABLE_TGUI)
-    target_compile_definitions(MKCDE PUBLIC MKCDE_ENABLE_TGUI)
-endif()
-
 if(MKCDE_OS_WINDOWS OR MKCDE_OS_IOS)
     set(DEFAULT_INSTALL_MISC_DIR .)
 elseif(MKCDE_OS_LINUX OR MKCDE_OS_FREEBSD OR MKCDE_OS_OPENBSD OR MKCDE_OS_NETBSD)
@@ -130,6 +122,14 @@ else()
     add_library(MKCDE ${MKCDE_SOURCES})
 
     mkcde_set_stdlib(MKCDE)
+
+    #for mkcde-graphics
+    if(MKCDE_ENABLE_IMGUI_SFML)
+        target_compile_definitions(MKCDE PUBLIC MKCDE_ENABLE_IMGUI_SFML)
+    endif()
+    if(MKCDE_ENABLE_TGUI)
+        target_compile_definitions(MKCDE PUBLIC MKCDE_ENABLE_TGUI)
+    endif()
 
     #set_target_properties(MKCDE PROPERTIES INSTALL_NAME_DIR "@rpath")
     #if(NOT CMAKE_SKIP_BUILD_RPATH)
