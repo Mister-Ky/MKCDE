@@ -17,7 +17,7 @@ mk::GraphicalApp::GraphicalApp(int argc, char* argv[])
 	//init(argc, argv);
 }
 
-mk::GraphicalApp::~GraphicalApp() {}
+mk::GraphicalApp::~GraphicalApp() { shutdown(); }
 
 byte mk::GraphicalApp::run()
 { 
