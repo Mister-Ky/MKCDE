@@ -3,8 +3,17 @@
 #ifndef MK_GRAPHICALAPP_HPP
 #define MK_GRAPHICALAPP_HPP
 
+#ifndef MK_APP_CONTINUE_SUCCESSFULLY
 // The MK_APP_CONTINUE_SUCCESSFULLY constant indicates the successful continuation of the application
 #define MK_APP_CONTINUE_SUCCESSFULLY 61
+#endif
+
+#ifndef MK_APP_SHUTDOWN
+// Use the MK_APP_SHUTDOWN macro at the beginning of your shutdown() function to improve the shutdown() function
+#define MK_APP_SHUTDOWN                                                                                              \
+if (wasShutdown) return;                                                                                \
+wasShutdown = true;
+#endif
 
 #include <MKCDE/App/Export.hpp>
 #include <MKCDE/Graphics.hpp>
@@ -35,6 +44,8 @@ protected:
 	//AppMode app_mode;
 
 	bool initializationSuccessful;
+
+	bool wasShutdown;
 
 	sf::RenderWindow window;
 private:

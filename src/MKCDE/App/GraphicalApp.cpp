@@ -2,11 +2,17 @@
 
 mk::GraphicalApp::GraphicalApp()
 {
+	initializationSuccessful = false;
+	wasShutdown = false;
+
 	//app_mode = GRAPHICS_MODE;
 	//init();
 }
 mk::GraphicalApp::GraphicalApp(int argc, char* argv[])
 {
+	initializationSuccessful = false;
+	wasShutdown = false;
+
 	//app_mode = GRAPHICS_MODE;
 	//init(argc, argv);
 }
