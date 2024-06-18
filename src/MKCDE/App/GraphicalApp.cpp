@@ -23,7 +23,7 @@ byte mk::GraphicalApp::run()
 { 
 	if (initializationSuccessful)
 	{
-		window.setFramerateLimit(get_frameRate());
+		window.setFramerateLimit(get_framerate());
 		while (window.isOpen())
 		{
 			byte update_return = update();
@@ -44,9 +44,9 @@ void mk::GraphicalApp::init(int argc, char* argv[]) {}
 byte mk::GraphicalApp::update() { return EXIT_SUCCESS; }
 void mk::GraphicalApp::shutdown() {}
 
-void mk::GraphicalApp::set_frameRate(const int new_frameRate)
+void mk::GraphicalApp::set_framerate(const int new_framerate)
 {
-	m_frameRate = new_frameRate;
-	window.setFramerateLimit(m_frameRate);
+	m_framerate = new_framerate;
+	window.setFramerateLimit(m_framerate);
 }
-int mk::GraphicalApp::get_frameRate() const { return m_frameRate; }
+int mk::GraphicalApp::get_framerate() const { return m_framerate; }

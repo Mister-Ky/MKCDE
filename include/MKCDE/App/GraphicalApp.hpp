@@ -38,8 +38,8 @@ protected:
 	virtual byte update();
 	virtual void shutdown();
 
-	void set_frameRate(const int new_frameRate);
-	int get_frameRate() const;
+	void set_framerate(const int new_framerate);
+	int get_framerate() const;
 
 	//AppMode app_mode;
 
@@ -49,7 +49,7 @@ protected:
 
 	sf::RenderWindow window;
 private:
-	int m_frameRate;
+	int m_framerate;
 };
 }
 
