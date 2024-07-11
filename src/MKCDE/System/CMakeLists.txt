@@ -9,10 +9,6 @@ set(SRC
     ${INCROOT}/EnvironmentVariables.hpp
     ${SRCROOT}/Logger.cpp
     ${INCROOT}/Logger.hpp
-    ${SRCROOT}/ProcessManager.cpp
-    ${INCROOT}/ProcessManager.hpp
-    ${SRCROOT}/FileManager.cpp
-    ${INCROOT}/FileManager.hpp
     ${SRCROOT}/SystemInfo.cpp
     ${INCROOT}/SystemInfo.hpp
 )
